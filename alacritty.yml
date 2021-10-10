@@ -1,0 +1,204 @@
+window:
+  decorations: none
+  opacity: 0.9
+  padding:
+    x: 6
+    y: 6
+  dynamic_padding: false
+  title: Alacritty
+  class:
+    instance: Alacritty
+    general: Alacritty
+
+scrolling:
+  history: 5000
+
+font:
+  normal:
+    family: Cascadia Code
+    style: Regular
+
+  bold:
+    family: Source Code Pro
+    style: Bold
+
+  italic:
+    family: Source Code Pro
+    style: Italic
+
+  bold_italic:
+    family: Source Code Pro
+    style: Bold Italic
+
+  size: 14.0
+
+  offset:
+    x: 0
+    y: 1
+
+draw_bold_text_with_bright_colors: true
+
+shell:
+  program: /bin/zsh
+
+schemes:
+  doom-one: &doom-one
+    primary:
+      background: '#282c34'
+      foreground: '#bbc2cf'
+    cursor:
+      text: CellBackground
+      cursor: '#528bff'
+    selection:
+      text: CellForeground
+      background: '#3e4451'
+    normal:
+      black: '#1c1f24'
+      red: '#ff6c6b'
+      green: '#98be65'
+      yellow: '#da8548'
+      blue: '#51afef'
+      magenta: '#c678dd'
+      cyan: '#5699af'
+      white: '#202328'
+    bright:
+      black: '#5b6268'
+      red: '#da8548'
+      green: '#4db5bd'
+      yellow: '#ecbe7b'
+      blue: '#3071db'
+      magenta: '#a9a1e1'
+      cyan: '#46d9ff'
+      white: '#dfdfdf'
+
+  dracula: &dracula
+    primary:
+      background: '#282a36'
+      foreground: '#f8f8f2'
+    cursor:
+      text: CellBackground
+      cursor: CellForeground
+    vi_mode_cursor:
+      text: CellBackground
+      cursor: CellForeground
+    search:
+      matches:
+        foreground: '#44475a'
+        background: '#50fa7b'
+      focused_match:
+        foreground: '#44475a'
+        background: '#ffb86c'
+      bar:
+        background: '#282a36'
+        foreground: '#f8f8f2'
+    line_indicator:
+      foreground: None
+      background: None
+    selection:
+      text: CellForeground
+      background: '#44475a'
+    normal:
+      black: '#000000'
+      red: '#ff5555'
+      green: '#50fa7b'
+      yellow: '#f1fa8c'
+      blue: '#bd93f9'
+      magenta: '#ff79c6'
+      cyan: '#8be9fd'
+      white: '#bfbfbf'
+    bright:
+      black: '#4d4d4d'
+      red: '#ff6e67'
+      green: '#5af78e'
+      yellow: '#f4f99d'
+      blue: '#caa9fa'
+      magenta: '#ff92d0'
+      cyan: '#9aedfe'
+      white: '#e6e6e6'
+    dim:
+      black: '#14151b'
+      red: '#ff2222'
+      green: '#1ef956'
+      yellow: '#ebf85b'
+      blue: '#4d5b86'
+      magenta: '#ff46b0'
+      cyan: '#59dffc'
+      white: '#e6e6d1'
+
+  solarized-light: &solarized-light
+    primary:
+      background: '#fdf6e3'
+      foreground: '#657b83'
+
+    cursor:
+      text: '#fdf6e3' # base3
+      cursor: '#657b83' # base00
+
+    normal:
+      black: '#073642'
+      red: '#dc322f'
+      green: '#859900'
+      yellow: '#b58900'
+      blue: '#268bd2'
+      magenta: '#d33682'
+      cyan: '#2aa198'
+      white: '#eee8d5'
+
+    bright:
+      black: '#002b36'
+      red: '#cb4b16'
+      green: '#586e75'
+      yellow: '#657b83'
+      blue: '#839496'
+      magenta: '#6c71c4'
+      cyan: '#93a1a1'
+      white: '#fdf6e3'
+
+  solarized-dark: &solarized-dark
+    primary:
+      background: '#002b36'
+      foreground: '#839496'
+
+    cursor:
+      text: '#002b36'
+      cursor: '#839496'
+
+    normal:
+      black: '#073642'
+      red: '#dc322f'
+      green: '#859900'
+      yellow: '#b58900'
+      blue: '#268bd2'
+      magenta: '#d33682'
+      cyan: '#2aa198'
+      white: '#eee8d5'
+
+    bright:
+      black: '#002b36'
+      red: '#cb4b16'
+      green: '#586e75'
+      yellow: '#657b83'
+      blue: '#839496'
+      magenta: '#6c71c4'
+      cyan: '#93a1a1'
+      white: '#fdf6e3'
+
+colors: *dracula
+
+key_bindings:
+  - { key: V, mods: Control|Shift, action: Paste }
+  - { key: C, mods: Control|Shift, action: Copy }
+  - { key: Insert, mods: Shift, action: PasteSelection }
+  - { key: Key0, mods: Control, action: ResetFontSize }
+  - { key: Equals, mods: Control, action: IncreaseFontSize }
+  - { key: Plus, mods: Control, action: IncreaseFontSize }
+  - { key: Minus, mods: Control, action: DecreaseFontSize }
+  - { key: F11, mods: None, action: ToggleFullscreen }
+  - { key: Paste, mods: None, action: Paste }
+  - { key: Copy, mods: None, action: Copy }
+  - { key: L, mods: Control, action: ClearLogNotice }
+  - { key: L, mods: Control, chars: "\x0c" }
+  - { key: PageUp, mods: None, action: ScrollPageUp, mode: ~Alt }
+  - { key: PageDown, mods: None, action: ScrollPageDown, mode: ~Alt }
+  - { key: Home, mods: Shift, action: ScrollToTop, mode: ~Alt }
+  - { key: End, mods: Shift, action: ScrollToBottom, mode: ~Alt }
