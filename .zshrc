@@ -1,4 +1,3 @@
-
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -107,7 +106,7 @@ postgresUser="bhumit070"
 postgresPassword="$dbPassword"
 
 alias postgres="docker run -d --name $postgresContainerName -e POSTGRES_USER=$postgresUser -e POSTGRES_PASSWORD=$postgresPassword -p $postgresPorts -v $postgresVolumeInfo $postgresImageName"
-alias postgress="docker container exec -it $postgresContainerName psql -U postgres"
+alias postgress="docker container exec -it $postgresContainerName psql -U postgresUser"
 alias postgresstop="dockerKillAndRemoveContainer $postgresContainerName"
 
 # function
