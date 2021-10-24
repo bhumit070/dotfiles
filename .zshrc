@@ -76,7 +76,7 @@ mongoImageName="mongo"
 mongoContainerName="mongodb"
 mongoVolumeInfo="mongo:/data/db"
 mongoDbConfigVolumeInfo="mongo:/data/configdb"
-mongoCommand="mongo"
+mongoCommand="mongosh"
 mongoPorts="27017:27017"
 
 alias mongo="docker container run -d --name $mongoContainerName -p $mongoPorts -v $mongoVolumeInfo -v $mongoDbConfigVolumeInfo $mongoImageName"
