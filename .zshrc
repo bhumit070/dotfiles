@@ -109,5 +109,17 @@ alias postgres="docker run -d --name $postgresContainerName -e POSTGRES_USER=$po
 alias postgress="docker container exec -it $postgresContainerName psql -U postgresUser"
 alias postgresstop="dockerKillAndRemoveContainer $postgresContainerName"
 
-# function
+# Functions
+
+# for vscode
 vs() { code $1 && exit }
+
+# for systemd
+sd() {
+  case "$1" in 
+    "start") sudo systemctl start $2;;
+    "stop") sudo systemctl stop $2;;
+    "enable") sudo systemctl enable $2;;
+    "reload") sudo systemctl reload $2;;
+  esac
+}
