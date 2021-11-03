@@ -2,28 +2,20 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-
-# Path to your oh-my-zsh installation.
-export ZSH="/home/bhumit070/.config/oh-my-zsh"
-
-ZSH_THEME="robbyrussell"
-
-# CASE_SENSITIVE="true"
-
-# HYPHEN_INSENSITIVE="true"
+export ZSH="/home/bhumit070/.oh-my-zsh"
 
 plugins=(
-	git
-	zsh-autosuggestions
-	zsh-vi-mode
-	zsh-syntax-highlighting
+    git
+    zsh-autosuggestions
+    zsh-vi-mode
+    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
 
-export LANG=en_US.UTF-8
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
 
-source ~/powerlevel10k/powerlevel10k.zsh-theme
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 EDITOR=vim
@@ -57,6 +49,8 @@ alias yg='yarn global add'
 
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+alias lock='dm-tool switch-to-greeter'
+
 # Docker
 
 # remove all containers
@@ -84,7 +78,6 @@ alias mongos="docker container exec -it $mongoContainerName $mongoCommand"
 alias mongostop="dockerKillAndRemoveContainer $mongoContainerName"
 
 dbPassword="bhumit070"
-
 # Docker MySQL
 mysqlImageName="mysql"
 mysqlContainerName="mysql"
@@ -118,6 +111,7 @@ vs() { code $1 && exit }
 sd() {
   case "$1" in 
     "start") sudo systemctl start $2;;
+    "status") systemctl status $2;;
     "stop") sudo systemctl stop $2;;
     "enable") sudo systemctl enable $2;;
     "reload") sudo systemctl reload $2;;
