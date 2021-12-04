@@ -19,10 +19,12 @@ export LC_ALL="en_US.UTF-8"
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 EDITOR=vim
+BROWSER=brave
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # CUSTOM PATHS
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/mnt/programmes/#Tools/flutter/flutter/bin
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completionv
@@ -32,12 +34,25 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # CUSTOM ALIAS
 alias zrc="source ~/.zshrc"
+alias ls="exa -la"
 alias sl=ls
+alias cat=bat
+alias glc="git log --oneline | wc -l"
+
+alias python3="python"
+alias pip3="pip"
+
+alias cp="cp -v"
+alias mv="mv -v"
+alias rm="rm -v"
 
 alias vsc='code . ; exit'
 
 alias pof='systemctl poweroff -i'
 alias rbt='systemctl reboot -i'
+
+alias vim='nvim'
+alias vvim='/usr/bin/vim'
 
 alias ni='npm i'
 alias nd='npm i -D'
@@ -46,6 +61,8 @@ alias ng='npm i -G'
 alias ya='yarn add'
 alias yd='yarn add -D'
 alias yg='yarn global add'
+
+alias vite='yarn create vite'
 
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
@@ -73,7 +90,7 @@ mongoDbConfigVolumeInfo="mongo:/data/configdb"
 mongoCommand="mongosh"
 mongoPorts="27017:27017"
 
-alias mongo="docker container run -d --name $mongoContainerName -p $mongoPorts -v $mongoVolumeInfo -v $mongoDbConfigVolumeInfo $mongoImageName"
+alias mongo="docker container run -d --name $mongoContainerName -p $mongoPorts -v $mongoVolumeInfo -v $mongoDbConfigVolumeInfo $mongoImageName || mongos"
 alias mongos="docker container exec -it $mongoContainerName $mongoCommand"
 alias mongostop="dockerKillAndRemoveContainer $mongoContainerName"
 
@@ -99,8 +116,17 @@ postgresUser="bhumit070"
 postgresPassword="$dbPassword"
 
 alias postgres="docker run -d --name $postgresContainerName -e POSTGRES_USER=$postgresUser -e POSTGRES_PASSWORD=$postgresPassword -p $postgresPorts -v $postgresVolumeInfo $postgresImageName"
-alias postgress="docker container exec -it $postgresContainerName psql -U postgresUser"
+alias postgress="docker container exec -it $postgresContainerName psql -U $postgresUser"
 alias postgresstop="dockerKillAndRemoveContainer $postgresContainerName"
+
+# Docker PgAdmin
+pgAdminImageName="dpage/pgadmin4"
+pgAdminContainerName="pgadmin"
+pgAdminVolumeInfo="postgres:/var/lib/pgadmin"
+pgAdminPorts="5000:80"
+
+alias pgadmin="docker run -d --name $pgAdminContainerName --publish $pgAdminPorts -e PGADMIN_DEFAULT_EMAIL="ganatrabhoomit070@gmail.com" -e PGADMIN_DEFAULT_PASSWORD="bhumit070" $pgAdminImageName"
+alias pgadminstop="dockerKillAndRemoveContainer $pgAdminContainerName"
 
 # Functions
 
