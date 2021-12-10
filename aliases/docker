@@ -1,0 +1,59 @@
+# Docker
+
+# remove all containers
+alias ddc='docker rm -vf $(docker ps -a -q)'
+
+# remove all images
+alias ddi='docker rmi -f $(docker images -a -q)'
+
+# ps all
+alias dps='docker ps --all'
+
+# Function
+dockerKillAndRemoveContainer() { docker container stop $1 && docker container rm $1 }
+
+# Docker Mongo DB
+mongoImageName="mongo"
+mongoContainerName="mongodb"
+mongoVolumeInfo="mongo:/data/db"
+mongoDbConfigVolumeInfo="mongo:/data/configdb"
+mongoCommand="mongosh"
+mongoPorts="27017:27017"
+
+alias mongo="docker container run -d --name $mongoContainerName -p $mongoPorts -v $mongoVolumeInfo -v $mongoDbConfigVolumeInfo $mongoImageName || mongos"
+alias mongos="docker container exec -it $mongoContainerName $mongoCommand"
+alias mongostop="dockerKillAndRemoveContainer $mongoContainerName"
+
+dbPassword="bhumit070"
+# Docker MySQL
+mysqlImageName="mysql"
+mysqlContainerName="mysql"
+mysqlVolumeInfo="mysql:/var/lib/mysql"
+mysqlCommand="mysql"
+mysqlPorts="3306:3306"
+
+alias mysql="docker run -d --name $mysqlContainerName -e MYSQL_ALLOW_EMPTY_PASSWORD=true -p $mysqlPorts -v $mysqlVolumeInfo $mysqlImageName"
+alias mysqls="docker exec -it ${mysqlContainerName} mysql"
+alias mysqlstop="dockerKillAndRemoveContainer $mysqlContainerName"
+
+# Docker Postgres
+postgresImageName="postgres"
+postgresContainerName="postgres"
+postgresVolumeInfo="postgres:/var/lib/postgresql/data"
+postgresCommand="mongo"
+postgresPorts="5432:5432"
+postgresUser="bhumit070"
+postgresPassword="$dbPassword"
+
+alias postgres="docker run -d --name $postgresContainerName -e POSTGRES_USER=$postgresUser -e POSTGRES_PASSWORD=$postgresPassword -p $postgresPorts -v $postgresVolumeInf    o $postgresImageName"
+alias postgress="docker container exec -it $postgresContainerName psql -U $postgresUser"
+alias postgresstop="dockerKillAndRemoveContainer $postgresContainerName"
+
+# Docker PgAdmin
+pgAdminImageName="dpage/pgadmin4"
+pgAdminContainerName="pgadmin"
+pgAdminVolumeInfo="postgres:/var/lib/pgadmin"
+pgAdminPorts="5000:80"
+
+alias pgadmin="docker run -d --name $pgAdminContainerName --publish $pgAdminPorts -e PGADMIN_DEFAULT_EMAIL="ganatrabhoomit070@gmail.com" -e PGADMIN_DEFAULT_PASSWORD="bhumit070" $pgAdminImageName"
+alias pgadminstop="dockerKillAndRemoveContainer $pgAdminContainerName"

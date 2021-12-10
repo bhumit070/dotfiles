@@ -1,0 +1,34 @@
+alias zrc="source ~/.zshrc"
+alias ls="exa -la"
+alias sl=ls
+alias cat=bat
+alias glc="git log --oneline | wc -l"
+
+alias python3="python"
+alias pip3="pip"
+
+alias cp="cp -v"
+alias mv="mv -v"
+alias rm="rm -v"
+
+alias vsc='code . ; exit'
+
+alias pof='systemctl poweroff -i'
+alias rbt='systemctl reboot -i'
+
+alias vim='nvim'
+alias vvim='/usr/bin/vim'
+
+alias ni='npm i'
+alias nd='npm i -D'
+alias ng='npm i -G'
+
+alias ya='yarn add'
+alias yd='yarn add -D'
+alias yg='yarn global add'
+
+alias vite='yarn create vite'
+
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+alias lock='dm-tool switch-to-greeter'

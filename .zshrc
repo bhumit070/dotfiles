@@ -1,8 +1,10 @@
+# POWERLEVEL 10K THEME
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export ZSH="/home/bhumit070/.oh-my-zsh"
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 
 plugins=(
     git
@@ -11,135 +13,24 @@ plugins=(
     zsh-syntax-highlighting
 )
 
-source $ZSH/oh-my-zsh.sh
-
-export LANG="en_US.UTF-8"
-export LC_ALL="en_US.UTF-8"
-
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-
+#VARIABLES
 EDITOR=vim
 BROWSER=brave
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+export ZSH="/home/bhumit070/.oh-my-zsh"
 # CUSTOM PATHS
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:/mnt/programmes/#Tools/flutter/flutter/bin
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completionv
+export PATH=$PATH:/usr/local/go/bin # GOLANG
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
-
+source $ZSH/oh-my-zsh.sh
 
 # CUSTOM ALIAS
-alias zrc="source ~/.zshrc"
-alias ls="exa -la"
-alias sl=ls
-alias cat=bat
-alias glc="git log --oneline | wc -l"
-
-alias python3="python"
-alias pip3="pip"
-
-alias cp="cp -v"
-alias mv="mv -v"
-alias rm="rm -v"
-
-alias vsc='code . ; exit'
-
-alias pof='systemctl poweroff -i'
-alias rbt='systemctl reboot -i'
-
-alias vim='nvim'
-alias vvim='/usr/bin/vim'
-
-alias ni='npm i'
-alias nd='npm i -D'
-alias ng='npm i -G'
-
-alias ya='yarn add'
-alias yd='yarn add -D'
-alias yg='yarn global add'
-
-alias vite='yarn create vite'
-
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-alias lock='dm-tool switch-to-greeter'
+source $HOME/dotfiles/aliases/custom
 
 # Docker
-
-# remove all containers
-alias ddc='docker rm -vf $(docker ps -a -q)'
-
-# remove all images
-alias ddi='docker rmi -f $(docker images -a -q)'
-
-# ps all
-alias dps='docker ps --all'
-
-# Function
-dockerKillAndRemoveContainer() { docker container stop $1 && docker container rm $1 }
-
-# Docker Mongo DB 
-mongoImageName="mongo"
-mongoContainerName="mongodb"
-mongoVolumeInfo="mongo:/data/db"
-mongoDbConfigVolumeInfo="mongo:/data/configdb"
-mongoCommand="mongosh"
-mongoPorts="27017:27017"
-
-alias mongo="docker container run -d --name $mongoContainerName -p $mongoPorts -v $mongoVolumeInfo -v $mongoDbConfigVolumeInfo $mongoImageName || mongos"
-alias mongos="docker container exec -it $mongoContainerName $mongoCommand"
-alias mongostop="dockerKillAndRemoveContainer $mongoContainerName"
-
-dbPassword="bhumit070"
-# Docker MySQL
-mysqlImageName="mysql"
-mysqlContainerName="mysql"
-mysqlVolumeInfo="mysql:/var/lib/mysql"
-mysqlCommand="mysql"
-mysqlPorts="3306:3306"
-
-alias mysql="docker run -d --name $mysqlContainerName -e MYSQL_ALLOW_EMPTY_PASSWORD=true -p $mysqlPorts -v $mysqlVolumeInfo $mysqlImageName"
-alias mysqls="docker exec -it ${mysqlContainerName} mysql"	
-alias mysqlstop="dockerKillAndRemoveContainer $mysqlContainerName"
-
-# Docker Postgres
-postgresImageName="postgres"
-postgresContainerName="postgres"
-postgresVolumeInfo="postgres:/var/lib/postgresql/data"
-postgresCommand="mongo"
-postgresPorts="5432:5432"
-postgresUser="bhumit070"
-postgresPassword="$dbPassword"
-
-alias postgres="docker run -d --name $postgresContainerName -e POSTGRES_USER=$postgresUser -e POSTGRES_PASSWORD=$postgresPassword -p $postgresPorts -v $postgresVolumeInfo $postgresImageName"
-alias postgress="docker container exec -it $postgresContainerName psql -U $postgresUser"
-alias postgresstop="dockerKillAndRemoveContainer $postgresContainerName"
-
-# Docker PgAdmin
-pgAdminImageName="dpage/pgadmin4"
-pgAdminContainerName="pgadmin"
-pgAdminVolumeInfo="postgres:/var/lib/pgadmin"
-pgAdminPorts="5000:80"
-
-alias pgadmin="docker run -d --name $pgAdminContainerName --publish $pgAdminPorts -e PGADMIN_DEFAULT_EMAIL="ganatrabhoomit070@gmail.com" -e PGADMIN_DEFAULT_PASSWORD="bhumit070" $pgAdminImageName"
-alias pgadminstop="dockerKillAndRemoveContainer $pgAdminContainerName"
+source $HOME/dotfiles/aliases/docker
 
 # Functions
-
-# for vscode
-vs() { code $1 && exit }
-
-# for systemd
-sd() {
-  case "$1" in 
-    "start") sudo systemctl start $2;;
-    "status") systemctl status $2;;
-    "stop") sudo systemctl stop $2;;
-    "enable") sudo systemctl enable $2;;
-    "reload") sudo systemctl reload $2;;
-  esac
-}
+source $HOME/dotfiles/aliases/functions
