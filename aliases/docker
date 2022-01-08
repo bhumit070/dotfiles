@@ -9,8 +9,9 @@ alias ddi='docker rmi -f $(docker images -a -q)'
 # ps all
 alias dps='docker ps --all'
 
-# Function
+# Functions
 dockerKillAndRemoveContainer() { docker container stop $1 && docker container rm $1 }
+dstart() { docker container start $1}
 
 # Docker Mongo DB
 mongoImageName="mongo"
