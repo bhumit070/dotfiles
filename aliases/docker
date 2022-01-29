@@ -46,7 +46,7 @@ postgresPorts="5432:5432"
 postgresUser="bhumit070"
 postgresPassword="$dbPassword"
 
-alias postgres="docker run -d --name $postgresContainerName -e POSTGRES_USER=$postgresUser -e POSTGRES_PASSWORD=$postgresPassword -p $postgresPorts -v $postgresVolumeInf    o $postgresImageName"
+alias postgres="docker run -d --name $postgresContainerName -e POSTGRES_USER=$postgresUser -e POSTGRES_PASSWORD=$postgresPassword -p $postgresPorts -v $postgresVolumeInfo $postgresImageName"
 alias postgress="docker container exec -it $postgresContainerName psql -U $postgresUser"
 alias postgresstop="dockerKillAndRemoveContainer $postgresContainerName"
 
