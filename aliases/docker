@@ -4,7 +4,7 @@
 alias ddc='docker rm -vf $(docker ps -a -q)'
 
 # remove all images
-alias ddi='docker rmi -f $(docker images -a -q)'
+# alias ddi='docker rmi -f $(docker images -a -q)'
 
 # ps all
 alias dps='docker ps --all'
@@ -58,3 +58,5 @@ pgAdminPorts="5000:80"
 
 alias pgadmin="docker run -d --name $pgAdminContainerName --publish $pgAdminPorts -e PGADMIN_DEFAULT_EMAIL="ganatrabhoomit070@gmail.com" -e PGADMIN_DEFAULT_PASSWORD="bhumit070" $pgAdminImageName"
 alias pgadminstop="dockerKillAndRemoveContainer $pgAdminContainerName"
+
+alias phpmyadmin="docker run --name phpmyadmin --link mysql:db -p 8080:80 phpmyadmin"

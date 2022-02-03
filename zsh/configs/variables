@@ -1,0 +1,5 @@
+ZSH_THEME_DIR=$HOME/dotfiles/zsh/theme
+ZSH_PLUGINS_DIR=$HOME/dotfiles/zsh/plugins
+
+EDITOR=nvim
+BROWSER=brave
