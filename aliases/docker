@@ -54,9 +54,11 @@ alias postgresstop="dockerKillAndRemoveContainer $postgresContainerName"
 pgAdminImageName="dpage/pgadmin4"
 pgAdminContainerName="pgadmin"
 pgAdminVolumeInfo="postgres:/var/lib/pgadmin"
-pgAdminPorts="5000:80"
+pgAdminPorts="8081:80"
+pgAdminVolumeInfo="pgadmin:/var/lib/pgadmin"
 
-alias pgadmin="docker run -d --name $pgAdminContainerName --publish $pgAdminPorts -e PGADMIN_DEFAULT_EMAIL="ganatrabhoomit070@gmail.com" -e PGADMIN_DEFAULT_PASSWORD="bhumit070" $pgAdminImageName"
+alias pgadmin="docker run -d --name $pgAdminContainerName --publish $pgAdminPorts -e PGADMIN_DEFAULT_EMAIL="bhumit070@gmail.com" -e PGADMIN_DEFAULT_PASSWORD="bhumit070" -v $pgAdminVolumeInfo $pgAdminImageName"
 alias pgadminstop="dockerKillAndRemoveContainer $pgAdminContainerName"
 
+# Docker Phpmyadmin
 alias phpmyadmin="docker run --name phpmyadmin --link mysql:db -p 8080:80 phpmyadmin"
