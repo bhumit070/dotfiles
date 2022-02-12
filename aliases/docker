@@ -61,4 +61,4 @@ alias pgadmin="docker run -d --name $pgAdminContainerName --publish $pgAdminPort
 alias pgadminstop="dockerKillAndRemoveContainer $pgAdminContainerName"
 
 # Docker Phpmyadmin
-alias phpmyadmin="docker run --name phpmyadmin --link mysql:db -p 8080:80 phpmyadmin"
+alias phpmyadmin="docker run -d --name phpmyadmin --link mysql:db -p 8080:80 phpmyadmin"
