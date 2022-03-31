@@ -1,0 +1,2 @@
+source $HOME/dotfiles/zsh/configs/autoload  #AUTOLOAD
+source $HOME/dotfiles/zsh/configs/variables #VARIABLES
