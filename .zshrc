@@ -20,8 +20,16 @@ source $ZSH_PLUGINS_DIR/zsh-nvm/zsh-nvm.plugin.zsh # nvm lazy load
 
 # CUSTOM PATHS
 export PATH=$PATH:/usr/local/go/bin # GOLANG
+export PATH="/usr/local/bin:$PATH"
+export HOMEBREW_PREFIX="/opt/homebrew";
+export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
+export HOMEBREW_REPOSITORY="/opt/homebrew";
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
+export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
+export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
 
 # ALIASES
 source $HOME/dotfiles/aliases/custom #Custom
 source $HOME/dotfiles/aliases/docker #Docker
 source $HOME/dotfiles/aliases/functions #Custom
+
