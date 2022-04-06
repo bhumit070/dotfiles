@@ -1,5 +1,5 @@
 # CONFIGS
-source $HOME/dotfiles/zsh/config/index
+source $HOME/dotfiles/zsh/configs/index
 
 # THEME
 source $ZSH_THEME_DIR/index
@@ -8,7 +8,7 @@ source $ZSH_THEME_DIR/index
 source $ZSH_PLUGINS_DIR/index
 
 # CUSTOM PATHS
-source $HOME/dotfiles/configs/paths
+source $HOME/dotfiles/zsh/configs/paths
 
 # ALIASES
 source $HOME/dotfiles/aliases/index
