@@ -1,7 +1,10 @@
 pluginsDir=$HOME/dotfiles/zsh/plugins
 themeDir=$HOME/dotfiles/zsh/theme
-rm -rf $pluginsDir/*``
+rm -rf $pluginsDir/*
 rm -rf $themeDir/*
+
+mkdir -p pluginsDir
+mkdir -p themeDir
 
 clone() {
 	git clone --depth=1 $1 $2
