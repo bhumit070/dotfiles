@@ -1,0 +1,4 @@
+zshrcFile=~/dotfiles/zsh/dotfiles/.zshrc
+if [ -r $zshrcFile ]; then
+	source $zshrcFile
+fi
