@@ -1,10 +1,17 @@
 pluginsDir=$HOME/dotfiles/zsh/plugins
 themeDir=$HOME/dotfiles/zsh/theme
-rm -rf $pluginsDir/*
-rm -rf $themeDir/*
 
-mkdir -p pluginsDir
-mkdir -p themeDir
+for file in $(ls $pluginsDir); do
+	if [ -d "$pluginsDir/$file" ]; then
+		rm -rf "$pluginsDir/$file"
+	fi
+done
+
+for file in $(ls $themeDir); do
+	if [ -d "$themeDir/$file" ]; then
+		rm -rf "$themeDir/$file"
+	fi
+done
 
 clone() {
 	git clone --depth=1 $1 $2
