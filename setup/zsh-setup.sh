@@ -25,3 +25,8 @@ clone https://github.com/lukechilds/zsh-nvm.git $pluginsDir/zsh-nvm
 
 # THEME INSTALL
 clone https://github.com/romkatv/powerlevel10k.git $themeDir/powerlevel10k
+
+homeZshrc="$HOME/dotfiles/zsh/dotfiles/.zshrc-home"
+if [ -f homeZshrc]; then
+	cp $homeZshrc $HOME/.zshrc
+fi
