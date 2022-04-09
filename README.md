@@ -9,9 +9,11 @@
 ## Zsh setup guide
 
 - To setup zsh use following steps
-  - open your terminal and enter following command <br />
+  - open your terminal and enter following commands <br />
   ```bash
   	cd $HOME/dotfiles/setup
+  ```
+  ```bash
   	./zsh-setup.sh
   ```
   - If you get any error like like permission denied while running `./zsh-setup.zsh` then run
