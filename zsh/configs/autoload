@@ -5,10 +5,10 @@ autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
-bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[A" up-line-or-beginning-search   # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 
-export HISTFILE=~/dotfiles/.zsh_history
+export HISTFILE=~/dotfiles/zsh/dotfiles/.zsh_history
 export HISTSIZE=100000000
 export SAVEHIST=1000000000
 
@@ -21,7 +21,7 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 
 autoload -U compinit
-zstyle ':completion:*' menu select 
+zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)
