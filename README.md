@@ -3,7 +3,7 @@
 - Note: To ensure that this repo dot files works properly clone this inside your home directory or use this command to clone this repo
 
 ```bash
-	git clone https://gitlab.com/bhumit070/dotfiles/git $HOME/dotfiles
+git clone https://gitlab.com/bhumit070/dotfiles.git $HOME/dotfiles
 ```
 
 ## Zsh setup guide
@@ -11,14 +11,14 @@
 - To setup zsh use following steps
   - open your terminal and enter following commands <br />
   ```bash
-  	cd $HOME/dotfiles/setup
+  cd $HOME/dotfiles/setup
   ```
   ```bash
-  	./zsh-setup.sh
+  ./zsh-setup.sh
   ```
   - If you get any error like like permission denied while running `./zsh-setup.zsh` then run
   ```bash
-  	chmod +x ./zsh-setup.sh
+  chmod +x ./zsh-setup.sh
   ```
   - then run `./zsh-setup.sh` again
   - And voila 🥳 you will have zsh setup
