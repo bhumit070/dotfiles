@@ -23,6 +23,7 @@ git clone https://gitlab.com/bhumit070/dotfiles.git $HOME/dotfiles
   - then run `./zsh-setup.sh` again
   - And voila 🥳 you will have zsh setup
   - now other thing is to install necessary fonts to render icons in terminal
+  - install [exa](https://github.com/ogham/exa) and [bat](https://github.com/sharkdp/bat) if you want to extend functionality of ls and cat command ( RECOMMENDED )
   - and then Download these four ttf files:
   - [MesloLGS NF Regular.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
   - [MesloLGS NF Bold.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf)
