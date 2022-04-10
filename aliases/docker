@@ -1,10 +1,14 @@
 # Docker
+dbPassword="bhumit070"
+postgresPassword="$dbPassword"
+postgresUser="$dbPassword"
+pgAdminDefaultEmail="bhumit070@gmail.com"
 
 # remove all containers
-alias ddc='docker rm -vf $(docker ps -a -q)'
+alias ddc='docker rm -f $(docker ps -a -q)'
 
 # remove all images
-# alias ddi='docker rmi -f $(docker images -a -q)'
+alias ddi='docker rmi -f $(docker images -a -q)'
 
 # ps all
 alias dps='docker ps --all'
@@ -25,7 +29,6 @@ alias mongo="docker container run -d --name $mongoContainerName -p $mongoPorts -
 alias mongos="docker container exec -it $mongoContainerName $mongoCommand"
 alias mongostop="dockerKillAndRemoveContainer $mongoContainerName"
 
-dbPassword="bhumit070"
 # Docker MySQL
 mysqlImageName="mysql"
 mysqlContainerName="mysql"
@@ -43,8 +46,6 @@ postgresContainerName="postgres"
 postgresVolumeInfo="postgres:/var/lib/postgresql/data"
 postgresCommand="mongo"
 postgresPorts="5432:5432"
-postgresUser="bhumit070"
-postgresPassword="$dbPassword"
 
 alias postgres="docker run -d --name $postgresContainerName -e POSTGRES_USER=$postgresUser -e POSTGRES_PASSWORD=$postgresPassword -p $postgresPorts -v $postgresVolumeInfo $postgresImageName"
 alias postgress="docker container exec -it $postgresContainerName psql -U $postgresUser"
@@ -57,7 +58,7 @@ pgAdminVolumeInfo="postgres:/var/lib/pgadmin"
 pgAdminPorts="8081:80"
 pgAdminVolumeInfo="pgadmin:/var/lib/pgadmin"
 
-alias pgadmin="docker run -d --name $pgAdminContainerName --publish $pgAdminPorts -e PGADMIN_DEFAULT_EMAIL="bhumit070@gmail.com" -e PGADMIN_DEFAULT_PASSWORD="bhumit070" -v $pgAdminVolumeInfo $pgAdminImageName"
+alias pgadmin="docker run -d --name $pgAdminContainerName --publish $pgAdminPorts -e PGADMIN_DEFAULT_EMAIL="$pgAdminDefaultEmail" -e PGADMIN_DEFAULT_PASSWORD="$dbPassword" -v $pgAdminVolumeInfo $pgAdminImageName"
 alias pgadminstop="dockerKillAndRemoveContainer $pgAdminContainerName"
 
 # Docker Phpmyadmin
