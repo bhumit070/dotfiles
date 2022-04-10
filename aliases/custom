@@ -1,7 +1,9 @@
 alias zrc="source ~/.zshrc"
 alias ls="exa -la || ls -lah"
 alias sl=ls
-alias cat="bat || cat"
+cat() {
+  bat $1 || $(whereis cat) $1
+}
 alias glc="git log --oneline | wc -l"
 
 alias python3="python"
