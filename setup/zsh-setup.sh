@@ -1,3 +1,5 @@
+#!/bin/bash
+
 pluginsDir=$HOME/dotfiles/zsh/plugins
 themeDir=$HOME/dotfiles/zsh/theme
 
