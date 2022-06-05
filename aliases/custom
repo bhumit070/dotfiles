@@ -1,7 +1,8 @@
 alias zrc="source ~/.zshrc"
-ls() {
-  exa -la || ls -lah
+_ls() {
+  exa -la $@ || /bin/ls -lah $@
 }
+alias ls=_ls $@
 alias sl=ls
 cat() {
   bat $1 || $(whereis cat) $1
