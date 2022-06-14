@@ -1,6 +1,8 @@
-export PATH=$PATH:/usr/local/go/bin                     # GOLANG
-export PATH=$PATH:$HOME/.nvm/versions/node/v16.14.2/bin #NODE JS
-export PATH="/usr/local/bin:$PATH"                      # BIN
+export PATH=$PATH:/usr/local/go/bin                                  # GOLANG
+export PATH=$PATH:$HOME/.nvm/versions/node/v16.14.2/bin              # NODE JS
+export PATH="$PATH:$HOME/tools/elasticstack/elasticsearch-8.1.3/bin" # Elastic Search
+export PATH="$PATH:$HOME/tools/elasticstack/kibana-8.1.3/bin"        # Kiabana
+export PATH="/usr/local/bin:$PATH"                                   # BIN
 
 # Bun
 export BUN_INSTALL="/Users/bhumit070/.bun"

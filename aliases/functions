@@ -11,3 +11,14 @@ sd() {
     "reload") sudo systemctl reload $2;;
   esac
 }
+
+startScreen() {
+  service=$1
+  local isServiceRunning=$(screen -ls | grep $service | wc -l | xargs)
+  if [ $isServiceRunning -gt 0 ] ; then
+    pid=$(screen -ls | grep $service | awk -F . '{print $1}' | xargs)
+    screen -dr ${pid}.${service}
+  else 
+    screen -dmS $service zsh -c "$service"
+  fi
+}
