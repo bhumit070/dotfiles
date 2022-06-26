@@ -44,3 +44,5 @@ alias kb="kibana"
 alias kbs="startScreen kibana"
 
 alias grep="grep -i --color=always"
+
+alias ip="ipconfig getifaddr en0"
