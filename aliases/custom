@@ -46,3 +46,22 @@ alias kbs="startScreen kibana"
 alias grep="grep -i --color=always"
 
 alias ip="ipconfig getifaddr en0"
+
+getBranchName() {
+  set -e
+  local branch=$1
+  if [ -z $branch ]; then
+    branch=$(git branch --show-current)
+  fi
+  echo $branch
+}
+
+gpo() {
+  set -e
+  git push origin $(getBranchName)
+}
+
+gpu() {
+  set -e
+  git pull origin $(getBranchName)
+}
