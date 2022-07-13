@@ -15,13 +15,6 @@ export SAVEHIST=1000000000
 # bun completions
 [ -s "/Users/bhumit070/.bun/_bun" ] && source "/Users/bhumit070/.bun/_bun"
 
-if type brew &>/dev/null; then
-	FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-
-	autoload -Uz compinit
-	compinit
-fi
-
 setopt appendhistory
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_IGNORE_DUPS
