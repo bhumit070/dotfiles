@@ -36,7 +36,7 @@ mysqlVolumeInfo="mysql:/var/lib/mysql"
 mysqlCommand="mysql"
 mysqlPorts="3306:3306"
 
-alias mysql="docker run -d --name $mysqlContainerName -e MYSQL_ALLOW_EMPTY_PASSWORD=true -p $mysqlPorts -v $mysqlVolumeInfo $mysqlImageName"
+alias dmysql="docker run -d --name $mysqlContainerName -e MYSQL_ALLOW_EMPTY_PASSWORD=true -p $mysqlPorts -v $mysqlVolumeInfo $mysqlImageName"
 alias mysqls="docker exec -it ${mysqlContainerName} mysql"
 alias mysqlstop="dockerKillAndRemoveContainer $mysqlContainerName"
 
