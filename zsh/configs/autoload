@@ -27,5 +27,6 @@ setopt INC_APPEND_HISTORY
 autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 compinit
 _comp_options+=(globdots)
