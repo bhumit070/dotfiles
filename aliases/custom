@@ -26,7 +26,7 @@ alias vvim='/usr/bin/vim'
 
 alias ni='npm i'
 alias nd='npm i -D'
-alias ng='npm i -G'
+alias nig='npm i -G'
 
 alias ya='yarn add'
 alias yd='yarn add -D'
