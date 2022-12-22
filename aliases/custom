@@ -47,6 +47,8 @@ alias grep="grep -i --color=always"
 
 alias ip="ipconfig getifaddr en0"
 
+alias mpv="mpv --fs"
+
 getBranchName() {
   set -e
   local branch=$1
@@ -65,3 +67,5 @@ gpu() {
   set -e
   git pull origin $(getBranchName)
 }
+
+alias k=kubectl
