@@ -1,5 +1,3 @@
 source $ZSH_PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh # zsh-autosuggestion
 source $ZSH_PLUGINS_DIR/zsh-vi-mode/zsh-vi-mode.plugin.zsh # zsh-vi-mode
 source $ZSH_PLUGINS_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh # zsh-syntax-highlighting
-export NVM_LAZY_LOAD=true
-source $ZSH_PLUGINS_DIR/zsh-nvm/zsh-nvm.plugin.zsh # nvm lazy load
