@@ -54,6 +54,12 @@ alias ip="ipconfig getifaddr en0"
 
 alias mpv="mpv --fs"
 
+alias k=kubectl
+
+alias cls=clear
+
+# Git Alises
+
 getBranchName() {
   set -e
   local branch=$1
@@ -64,15 +70,12 @@ getBranchName() {
 }
 
 gpo() {
-  set -e
   git push origin $(getBranchName)
 }
 
 gpu() {
-  set -e
   git pull origin $(getBranchName)
 }
 
-alias k=kubectl
-
-alias cls=clear
+alias gaa="git add -A"
+alias gc="git commit"
