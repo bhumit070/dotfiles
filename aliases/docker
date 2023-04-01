@@ -63,3 +63,6 @@ alias pgadminstop="dockerKillAndRemoveContainer $pgAdminContainerName"
 
 # Docker Phpmyadmin
 alias phpmyadmin="docker run -d --name phpmyadmin --link mysql:db -p 8080:80 phpmyadmin"
+
+# Kubernetes
+alias k=kubectl
