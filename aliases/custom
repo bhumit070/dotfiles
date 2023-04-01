@@ -40,7 +40,7 @@ alias yii='yarn init -y'
 
 alias pi'pnpm i'
 alias pd='pnpm i -D'
-alias ppg='pnpm i -G'
+alias ppg='pnpm i -g'
 alias pii='pnpm init'
 
 alias vite='yarn create vite'
