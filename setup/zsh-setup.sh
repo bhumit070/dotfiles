@@ -22,7 +22,7 @@ clone() {
 # PLUNGINS INSTALL
 clone https://github.com/zsh-users/zsh-autosuggestions $pluginsDir/zsh-autosuggestions
 clone https://github.com/jeffreytse/zsh-vi-mode.git $pluginsDir/zsh-vi-mode
-clone https://github.com/zsh-users/zsh-syntax-highlighting.git $pluginsDir/zsh-syntax-highlighting
+clone https://github.com/zdharma-continuum/fast-syntax-highlighting $pluginsDir/fast-syntax-highlighting
 
 # THEME INSTALL
 clone https://github.com/romkatv/powerlevel10k.git $themeDir/powerlevel10k
