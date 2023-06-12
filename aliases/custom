@@ -3,7 +3,7 @@ alias zrc="source ~/.zshrc"
 # Some Common Aliases
 
 cat() {
-  bat $1 || comamnd $1
+  bat "$1" || comamnd "$1"
 }
 
 _ls() {
@@ -49,10 +49,10 @@ alias vite='yarn create vite'
 getBranchName() {
   set -e
   local branch=$1
-  if [ -z $branch ]; then
+  if [ -z "$branch" ]; then
     branch=$(git branch --show-current)
   fi
-  echo $branch
+  echo "$branch"
 }
 
 gpo() {
@@ -67,3 +67,6 @@ alias gaa="git add -A"
 alias gc="git commit"
 
 alias glc="git log --oneline | wc -l"
+
+alias python=python3
+alias python2=python3
