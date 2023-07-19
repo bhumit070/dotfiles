@@ -1418,7 +1418,7 @@
 	<key>ShortLivedSessionDuration</key>
 	<real>0.0</real>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>

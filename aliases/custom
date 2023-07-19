@@ -7,10 +7,10 @@ cat() {
 }
 
 _ls() {
-  exa -la $@ || /bin/ls -lah $@
+  exa -la "$@" || /bin/ls -lah "$@"
 }
 
-alias ls=_ls $@
+alias ls=_ls "$@"
 alias sl=ls
 alias cp="cp -v"
 alias mv="mv -v"
@@ -56,11 +56,11 @@ getBranchName() {
 }
 
 gpo() {
-  git push origin $(getBranchName)
+  git push origin "$(getBranchName "$@")"
 }
 
 gpu() {
-  git pull origin $(getBranchName)
+  git pull origin "$(getBranchName "$@")"
 }
 
 alias gaa="git add -A"
