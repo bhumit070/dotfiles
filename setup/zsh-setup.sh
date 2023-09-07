@@ -37,7 +37,7 @@ osName=$(uname)
 if [ $osName == 'Darwin' ]; then
 	brew=$(which brew)
 	if [ ! -z $brew ]; then
-		brew install exa bat
+		brew bundle --file ~/dotfiles/brew/Brewfile
 		exit 0
 	fi
 fi
