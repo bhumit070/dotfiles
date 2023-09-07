@@ -7,7 +7,7 @@ cat() {
 }
 
 _ls() {
-  exa -la "$@" || /bin/ls -lah "$@"
+  eza -la "$@" || /bin/ls -lah "$@"
 }
 
 alias ls=_ls "$@"
