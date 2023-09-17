@@ -41,7 +41,7 @@ alias mysqls="docker exec -it ${mysqlContainerName} mysql"
 alias mysqlstop="dockerKillAndRemoveContainer $mysqlContainerName"
 
 # Docker Postgres
-postgresImageName="postgres"
+postgresImageName="postgres:14"
 postgresContainerName="postgres"
 postgresVolumeInfo="postgres:/var/lib/postgresql/data"
 postgresCommand="mongo"
