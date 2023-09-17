@@ -44,12 +44,12 @@ fi
 
 if [ $osName == 'Linux' ]; then
 	apt=$(which apt)
-	if [ ! -z $apt]; then
+	if [ ! -z $apt ]; then
 		sudo apt install exa bat
 		exit 0
 	fi
 	pacman=$(which pacman)
-	if [ ! -z $pacman]; then
+	if [ ! -z $pacman ]; then
 		sudo pacman -S bat exa
 		exit 0
 	fi

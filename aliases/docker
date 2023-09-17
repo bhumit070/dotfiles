@@ -18,51 +18,36 @@ dockerKillAndRemoveContainer() { docker container stop $1 && docker container rm
 dstart() { docker container start $1}
 
 # Docker Mongo DB
-mongoImageName="mongo"
+mongoImageName="mongo:6"
 mongoContainerName="mongodb"
-mongoVolumeInfo="mongo:/data/db"
-mongoDbConfigVolumeInfo="mongo:/data/configdb"
+mongoVolumeInfo="${HOME}/docker/mongodb:/data/db"
+mongoDbConfigVolumeInfo="${HOME}/docker/mongodb:/data/configdb"
 mongoCommand="mongosh"
 mongoPorts="27017:27017"
 
-alias mongo="docker container run -d --name $mongoContainerName -p $mongoPorts -v $mongoVolumeInfo -v $mongoDbConfigVolumeInfo $mongoImageName || mongos"
-alias mongos="docker container exec -it $mongoContainerName $mongoCommand"
-alias mongostop="dockerKillAndRemoveContainer $mongoContainerName"
+alias dmongo="docker container run -d --name $mongoContainerName -p $mongoPorts -v $mongoVolumeInfo -v $mongoDbConfigVolumeInfo $mongoImageName || mongos"
+alias dmongos="docker container exec -it $mongoContainerName $mongoCommand"
+alias dmongostop="dockerKillAndRemoveContainer $mongoContainerName"
 
 # Docker MySQL
-mysqlImageName="mysql"
+mysqlImageName="mysql:8.1.0"
 mysqlContainerName="mysql"
-mysqlVolumeInfo="mysql:/var/lib/mysql"
-mysqlCommand="mysql"
+mysqlVolumeInfo="${HOME}/docker/mysql:/var/lib/mysql"
 mysqlPorts="3306:3306"
 
 alias dmysql="docker run -d --name $mysqlContainerName -e MYSQL_ALLOW_EMPTY_PASSWORD=true -p $mysqlPorts -v $mysqlVolumeInfo $mysqlImageName"
-alias mysqls="docker exec -it ${mysqlContainerName} mysql"
-alias mysqlstop="dockerKillAndRemoveContainer $mysqlContainerName"
+alias dmysqls="docker exec -it ${mysqlContainerName} mysql"
+alias dmysqlstop="dockerKillAndRemoveContainer $mysqlContainerName"
 
 # Docker Postgres
 postgresImageName="postgres:14"
 postgresContainerName="postgres"
-postgresVolumeInfo="postgres:/var/lib/postgresql/data"
-postgresCommand="mongo"
+postgresVolumeInfo="${HOME}/docker/postgres:/var/lib/postgresql/data"
 postgresPorts="5432:5432"
 
-alias postgres="docker run -d --name $postgresContainerName -e POSTGRES_USER=$postgresUser -e POSTGRES_PASSWORD=$postgresPassword -p $postgresPorts -v $postgresVolumeInfo $postgresImageName"
-alias postgress="docker container exec -it $postgresContainerName psql -U $postgresUser"
-alias postgresstop="dockerKillAndRemoveContainer $postgresContainerName"
-
-# Docker PgAdmin
-pgAdminImageName="dpage/pgadmin4"
-pgAdminContainerName="pgadmin"
-pgAdminVolumeInfo="postgres:/var/lib/pgadmin"
-pgAdminPorts="8081:80"
-pgAdminVolumeInfo="pgadmin:/var/lib/pgadmin"
-
-alias pgadmin="docker run -d --name $pgAdminContainerName --publish $pgAdminPorts -e PGADMIN_DEFAULT_EMAIL="$pgAdminDefaultEmail" -e PGADMIN_DEFAULT_PASSWORD="$dbPassword" -v $pgAdminVolumeInfo $pgAdminImageName"
-alias pgadminstop="dockerKillAndRemoveContainer $pgAdminContainerName"
-
-# Docker Phpmyadmin
-alias phpmyadmin="docker run -d --name phpmyadmin --link mysql:db -p 8080:80 phpmyadmin"
+alias dpostgres="docker run -d --name $postgresContainerName -e POSTGRES_USER=$postgresUser -e POSTGRES_PASSWORD=$postgresPassword -p $postgresPorts -v $postgresVolumeInfo $postgresImageName"
+alias dpostgress="docker container exec -it $postgresContainerName psql -U $postgresUser"
+alias dpostgresstop="dockerKillAndRemoveContainer $postgresContainerName"
 
 # Kubernetes
 alias k=kubectl

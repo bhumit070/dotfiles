@@ -4,28 +4,25 @@ function pullImage() {
 	docker pull $1
 }
 
-function createVolumeName() {
-	docker volume create $1
-}
-
 docker -v || exit 1
 
 echo "Docker is Installed proceeding..."
 
 echo "PULLING UP IMAGES..."
 
-pullImage mongo &&
-	pullImage "mysql" &&
-	pullImage "postgres" &&
-	pullImage "postgres" &&
-	pullImage "dpage/pgadmin4" &&
-	pullImage "phpmyadmin"
+pullImage mongo:6 &&
+	pullImage "mysql:8.1.0" &&
+	pullImage "postgres:14"
 
 echo "CREAING VOLUMES FOR IMAGES..."
 
-createVolumeName 'mongo' &&
-	createVolumeName 'mysql' &&
-	createVolumeName 'pgadmin' &&
-	createVolumeName 'postgres'
+
+BASE_PATH="$HOME"/docker
+
+mkdir -p "$BASE_PATH"
+
+mkdir -p "$BASE_PATH"/mongodb
+mkdir -p "$BASE_PATH"/mysql
+mkdir -p "$BASE_PATH"/postgres
 
 echo "DOCKER SETUP DONE"
