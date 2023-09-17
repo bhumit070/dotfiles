@@ -17,11 +17,13 @@ alias dps='docker ps --all'
 dockerKillAndRemoveContainer() { docker container stop $1 && docker container rm $1 }
 dstart() { docker container start $1}
 
+DOCKER_VOLUME_BASE_PATH="${HOME}/docker"
+
 # Docker Mongo DB
 mongoImageName="mongo:6"
 mongoContainerName="mongodb"
-mongoVolumeInfo="${HOME}/docker/mongodb:/data/db"
-mongoDbConfigVolumeInfo="${HOME}/docker/mongodb:/data/configdb"
+mongoVolumeInfo="${DOCKER_VOLUME_BASE_PATH}/mongodb/db:/data/db"
+mongoDbConfigVolumeInfo="${DOCKER_VOLUME_BASE_PATH}/mongodb/configdb:/data/configdb"
 mongoCommand="mongosh"
 mongoPorts="27017:27017"
 
@@ -32,7 +34,7 @@ alias dmongostop="dockerKillAndRemoveContainer $mongoContainerName"
 # Docker MySQL
 mysqlImageName="mysql:8.1.0"
 mysqlContainerName="mysql"
-mysqlVolumeInfo="${HOME}/docker/mysql:/var/lib/mysql"
+mysqlVolumeInfo="${DOCKER_VOLUME_BASE_PATH}/mysql:/var/lib/mysql"
 mysqlPorts="3306:3306"
 
 alias dmysql="docker run -d --name $mysqlContainerName -e MYSQL_ALLOW_EMPTY_PASSWORD=true -p $mysqlPorts -v $mysqlVolumeInfo $mysqlImageName"
