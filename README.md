@@ -3,7 +3,7 @@
 - Note: To ensure that this repo dot files works properly clone this inside your home directory or use this command to clone this repo
 
 ```bash
-git clone https://gitlab.com/bhumit070/dotfiles.git $HOME/dotfiles
+git clone https://github.com/bhumit070/dotfiles.git $HOME/dotfiles
 ```
 
 ## Zsh setup guide
