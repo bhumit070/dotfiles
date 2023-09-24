@@ -1,13 +1,14 @@
 format = """
-$all\
+$os\
 $directory\
+$all\
 $nodejs\
-$battery \
 $git_branch\
 $git_state\
 $git_status\
 $git_metrics\
 $fill\
+$battery \
 $cmd_duration $jobs $time\
 $line_break\
 $username\
@@ -54,7 +55,7 @@ style = "bright-black"
 disabled = false
 
 [cmd_duration]
-format = "[$duration]($style)"
+format = "[took $duration]($style)"
 style = "yellow"
 
 [memory_usage]
