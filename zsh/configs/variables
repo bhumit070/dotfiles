@@ -1,5 +1,6 @@
 export ZSH_THEME_DIR=$HOME/dotfiles/zsh/theme
 export ZSH_PLUGINS_DIR=$HOME/dotfiles/zsh/plugins
+export STARSHIP_CACHE=~/.cache/starship
 
 export EDITOR=nvim
 export BROWSER=brave
