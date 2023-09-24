@@ -23,7 +23,9 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 export PATH=${PATH}:/usr/local/mysql/bin
 
 export GOPATH="$HOME/go"
+export STARSHIP_CONFIG="$HOME/dotfiles/starship/starship.toml"
 export PATH="$GOPATH/bin:$PATH"
+
 
 if [ -z "$(which fnm)" ]; then
   eval "$(fnm env --use-on-cd)"

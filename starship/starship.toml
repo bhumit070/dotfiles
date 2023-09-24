@@ -1,0 +1,21 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+
+# Use custom format
+format = '$os$all$directory$character'
+
+scan_timeout = 10
+
+# Set 'foo' as custom color palette
+palette = 'foo'
+
+
+[character]
+success_symbol = '[➜](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+
+[package]
+disabled = true
+
+[os]
+disabled = false
+format = "$symbol"
