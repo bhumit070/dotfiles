@@ -70,3 +70,5 @@ alias glc="git log --oneline | wc -l | xargs"
 
 alias python=python3
 alias python2=python3
+
+alias iphone="open -a Simulator.app --args -CurrentDeviceUDID 23936427-07EB-484E-A19D-CEDDED536D7D"
