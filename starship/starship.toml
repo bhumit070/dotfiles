@@ -1,7 +1,6 @@
 format = """
 $os\
 $directory\
-$all\
 $nodejs\
 $git_branch\
 $git_state\
@@ -15,7 +14,8 @@ $username\
 $hostname\ 
 $character"""
 
-scan_timeout = 10
+scan_timeout = 30
+command_timeout = 1_000
 
 [character]
 success_symbol = "[❯](bold green)"
