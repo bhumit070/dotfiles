@@ -78,7 +78,7 @@ format = "[TUNNEL OPEN for $output]($style)"
 [hostname]
 ssh_only = false
 format = '[$hostname](bg:#F4C724 underline fg:#333945 bold inverted)'
-trim_at = '.companyname.com'
+trim_at = '.'
 disabled = false
 
 [username]
