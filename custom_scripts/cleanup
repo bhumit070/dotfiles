@@ -1,0 +1,39 @@
+#!/bin/bash
+
+directory="${1}" 
+
+if [ -z "$directory" ]; then
+  directory="$(pwd)"
+fi
+
+read -pr "Are you sure you want to clean up $directory? [y/N]" confirmation
+
+if [ "$confirmation" != "y" ]; then
+  exit 1
+fi
+
+
+
+# Check if the provided path is a directory
+if [ ! -d "$directory" ]; then
+  echo "Error: $directory is not a directory."
+  exit 1
+fi
+
+find "$directory" -maxdepth 1 -type f -print0 | while IFS= read -r -d '' file; do
+  filename=$(basename "$file")
+
+  extension="${filename##*.}"
+  destination_directory="$directory/$extension"
+  destination_file="$destination_directory/$filename"
+
+  mkdir -p "$destination_directory"
+
+  if [ -e "$destination_file" ]; then
+    destination_file="$destination_directory/$filename-$RANDOM"
+  fi
+
+  mv "$file" "$destination_file";
+done
+
+

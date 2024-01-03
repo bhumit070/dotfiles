@@ -3,6 +3,7 @@ export PATH=$PATH:$HOME/.nvm/versions/node/v16.14.2/bin              # NODE JS
 export PATH="$PATH:$HOME/tools/elasticstack/elasticsearch-8.1.3/bin" # Elastic Search
 export PATH="$PATH:$HOME/tools/elasticstack/kibana-8.1.3/bin"        # Kiabana
 export PATH="$PATH:/Applications/mpv.app/Contents/MacOS" 	     	 # Mpv
+export PATH="$PATH:$HOME/dotfiles/custom_scripts" # custom_scripts
 export PATH="$PATH:/usr/local/bin:$PATH"                                   # BIN
 export PATH="$PATH:$HOME/.local/bin:$PATH"                                  # LOCAL BIN
 
@@ -37,3 +38,7 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
+
+if [ -d "$HOME/.cargo/bin" ]; then
+  export PATH="$HOME/.cargo/bin:$PATH"
+fi
