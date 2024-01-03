@@ -6,7 +6,7 @@ if [ -z "$directory" ]; then
   directory="$(pwd)"
 fi
 
-read -pr "Are you sure you want to clean up $directory? [y/N]" confirmation
+read -p "Are you sure you want to clean up $directory? [y/N]" confirmation
 
 if [ "$confirmation" != "y" ]; then
   exit 1
