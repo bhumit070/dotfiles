@@ -1,0 +1,95 @@
+format = """
+$os\
+$directory\
+$nodejs\
+$git_branch\
+$git_state\
+$git_status\
+$git_metrics\
+$fill\
+$battery \
+$cmd_duration $jobs $time\
+$line_break\
+$username\
+$hostname\ 
+$character"""
+
+scan_timeout = 30
+command_timeout = 1_000
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](red)"
+
+[package]
+disabled = true
+
+[os]
+disabled = false
+format = "$symbol"
+
+[nodejs]
+format = "[$symbol($version )]($style)"
+
+[directory]
+style = "blue"
+read_only = " "
+truncation_length = 4
+truncate_to_repo = false
+
+[jobs]
+symbol = ""
+style = "bold red"
+number_threshold = 1
+format = "[$symbol]($style)"
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "cyan"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+[git_metrics]
+disabled = false
+
+[cmd_duration]
+format = "[took $duration]($style)"
+style = "yellow"
+
+[memory_usage]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[time]
+disabled = false
+style = "bold white"
+format = "[$time]($style)"
+
+[custom.stunnel]
+when = "ps aux | grep stunnel | grep -v grep"
+command = "ps -o etime= -p $(ps aux | grep stunnel | grep -v grep | awk '{print $2}')"
+style = "red"
+format = "[TUNNEL OPEN for $output]($style)"
+
+[hostname]
+ssh_only = false
+format = '[$hostname](bg:#F4C724 underline fg:#333945 bold inverted)'
+trim_at = '.'
+disabled = false
+
+[username]
+format = '[$user@](bg:#F4C724 underline fg:#333945 bold inverted)'
+disabled = false
+show_always = true
+
+[battery]
+display = [{ style = "red bold", threshold = 100 }]
+format = "[$symbol $percentage]($style)"
+full_symbol = '🔋'
+charging_symbol = '⚡️'
+discharging_symbol = '💀'
+disabled = false
