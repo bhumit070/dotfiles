@@ -8,12 +8,10 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search   # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 
-export HISTFILE=~/dotfiles/zsh/dotfiles/.zsh_history
+export HISTFILE=$HOME/dotfiles/zsh/dotfiles/.zsh_history
 export HISTSIZE=100000000
 export SAVEHIST=1000000000
 
-# bun completions
-[ -s "/Users/bhumit070/.bun/_bun" ] && source "/Users/bhumit070/.bun/_bun"
 
 setopt appendhistory
 setopt HIST_EXPIRE_DUPS_FIRST
