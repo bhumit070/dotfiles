@@ -54,3 +54,6 @@ if [ $osName == 'Linux' ]; then
 		exit 0
 	fi
 fi
+
+./docker.sh
+./crontab.sh
