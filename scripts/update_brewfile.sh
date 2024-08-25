@@ -6,6 +6,7 @@ FILE=$HOME/dotfiles/brew/Brewfile
 brew bundle dump --file=$FILE -f
 
 cd "$HOME/dotfiles/" || exit
+echo "CAME TO HERE"
 if ! git diff --quiet HEAD -- "$FILE"; then
 
 	git add brew/Brewfile
@@ -14,3 +15,5 @@ if ! git diff --quiet HEAD -- "$FILE"; then
 	branch=$(git branch --show-current)
 	git push origin $branch
 fi
+
+cd - || exit
