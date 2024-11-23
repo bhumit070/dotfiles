@@ -55,5 +55,7 @@ if [ $osName == 'Linux' ]; then
 	fi
 fi
 
+mkdir ~/.local/share/Trash
+
 ./docker.sh
 ./crontab.sh
