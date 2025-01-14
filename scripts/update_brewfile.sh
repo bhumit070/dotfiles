@@ -6,7 +6,7 @@ FILE=$HOME/dotfiles/brew/Brewfile
 brew bundle dump --file=$FILE -f
 
 cd "$HOME/dotfiles/" || exit
-echo "CAME TO HERE"
+
 if ! git diff --quiet HEAD -- "$FILE"; then
 
 	git add brew/Brewfile
