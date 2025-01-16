@@ -1,24 +1,32 @@
 # for vscode
-vs() { code $1 && exit }
+vsc() {
+  dir=$1
+  if [ -z "$dir" ]; then
+    dir=$PWD
+  fi
+
+  code "$dir"
+
+}
 
 # for systemd
 sd() {
   case "$1" in
-    "start") sudo systemctl start $2;;
-    "status") systemctl status $2;;
-    "stop") sudo systemctl stop $2;;
-    "enable") sudo systemctl enable $2;;
-    "reload") sudo systemctl reload $2;;
+  "start") sudo systemctl start $2 ;;
+  "status") systemctl status $2 ;;
+  "stop") sudo systemctl stop $2 ;;
+  "enable") sudo systemctl enable $2 ;;
+  "reload") sudo systemctl reload $2 ;;
   esac
 }
 
 startScreen() {
   service=$1
   local isServiceRunning=$(screen -ls | grep $service | wc -l | xargs)
-  if [ $isServiceRunning -gt 0 ] ; then
+  if [ $isServiceRunning -gt 0 ]; then
     pid=$(screen -ls | grep $service | awk -F . '{print $1}' | xargs)
     screen -dr ${pid}.${service}
-  else 
+  else
     screen -dmS $service zsh -c "$service"
   fi
 }

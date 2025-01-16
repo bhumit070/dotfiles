@@ -23,8 +23,6 @@ alias cls=clear
 # Mpv
 alias mpv="mpv --fs"
 
-alias vsc='code . ; exit'
-
 # JS Aliases
 
 alias ni='npm i'
@@ -74,3 +72,6 @@ alias python2=python3
 alias iphone="open -a Simulator.app --args -CurrentDeviceUDID 23936427-07EB-484E-A19D-CEDDED536D7D"
 
 alias rm="trash"
+
+alias grm="go run main.go"
+alias grsm="go run src/main.go"
