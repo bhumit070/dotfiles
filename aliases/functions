@@ -5,8 +5,7 @@ vsc() {
     dir=$PWD
   fi
 
-  code "$dir"
-
+  code "$dir" && exit
 }
 
 # for systemd
