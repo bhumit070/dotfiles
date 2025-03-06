@@ -1,0 +1,7 @@
+background = 2A353F
+foreground = ffffff
+
+font-size = 18
+
+keybind = ctrl+z=close_surface
+keybind = ctrl+d=new_split:right
