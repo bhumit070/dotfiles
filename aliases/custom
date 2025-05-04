@@ -76,4 +76,4 @@ alias rm="trash"
 alias grm="go run main.go"
 alias grsm="go run src/main.go"
 
-alias dozzle="docker run -d -v /var/run/docker.sock:/var/run/docker.sock -p 5050:8080 amir20/dozzle:latest"
+alias dozzle="docker run -d -v /var/run/docker.sock:/var/run/docker.sock -p 5050:8080 --name dozzle amir20/dozzle:latest"
