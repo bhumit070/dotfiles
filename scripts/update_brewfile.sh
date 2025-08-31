@@ -2,6 +2,8 @@
 
 # This script updates the Homebrew formula for the current version of the
 
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin
+
 FILE=$HOME/dotfiles/brew/Brewfile
 brew bundle dump --file=$FILE -f
 
