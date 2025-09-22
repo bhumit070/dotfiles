@@ -82,7 +82,7 @@ brew "smartmontools"
 brew "starship"
 brew "terraform-local"
 brew "tldr"
-brew "trash-cli"
+brew "trash-cli", link: true
 brew "tree"
 brew "watchman"
 brew "wget"
