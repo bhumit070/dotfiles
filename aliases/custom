@@ -54,7 +54,7 @@ getBranchName() {
 }
 
 gpo() {
-  git push origin "$(getBranchName "$@")"
+  git push --set-upstream origin "$(getBranchName "$@")"
 }
 
 gpu() {
