@@ -90,7 +90,7 @@ brew "watchman"
 brew "wget"
 brew "yarn"
 brew "yt-dlp"
-brew "zig", link: false
+brew "zig"
 brew "codecrafters-io/tap/codecrafters"
 brew "hashicorp/tap/terraform"
 brew "koekeishiya/formulae/yabai"
