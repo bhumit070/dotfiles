@@ -48,7 +48,7 @@ brew "libass"
 brew "pango"
 brew "tesseract"
 brew "zimg"
-brew "ffmpeg"
+brew "ffmpeg", link: false
 brew "fnm"
 brew "fzf"
 brew "gh"
