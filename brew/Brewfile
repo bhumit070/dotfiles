@@ -75,7 +75,7 @@ brew "openvpn"
 brew "oxker"
 brew "pipx"
 brew "qpdf"
-brew "redis"
+brew "redis", restart_service: :changed
 brew "ripgrep"
 brew "rust"
 brew "scrcpy"
