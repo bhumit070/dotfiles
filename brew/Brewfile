@@ -71,6 +71,7 @@ brew "onefetch"
 brew "openvino"
 brew "openvpn"
 brew "oxker"
+brew "pandoc"
 brew "pipx"
 brew "qpdf"
 brew "redis", restart_service: :changed
