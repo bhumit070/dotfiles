@@ -75,6 +75,7 @@ brew "qpdf"
 brew "redis", restart_service: :changed
 brew "ripgrep"
 brew "rust"
+brew "sleepwatcher", restart_service: :changed
 brew "smartmontools"
 brew "starship"
 brew "terraform-local"
