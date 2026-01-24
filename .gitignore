@@ -1,2 +1,4 @@
 .DS_store
 .zsh_history
+
+nginx/logs/*.log
