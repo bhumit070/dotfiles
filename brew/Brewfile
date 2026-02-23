@@ -82,6 +82,7 @@ brew "rust"
 brew "sleepwatcher", restart_service: :changed
 brew "smartmontools"
 brew "starship"
+brew "tailscale"
 brew "terraform-local"
 brew "trash-cli", link: true
 brew "tree"
