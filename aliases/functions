@@ -29,3 +29,8 @@ startScreen() {
     screen -dmS $service zsh -c "$service"
   fi
 }
+
+
+reindexSpotlight() {
+  sudo mdutil -a -i off && sudo mdutil -a -i on && sudo mdutil -E
+}
