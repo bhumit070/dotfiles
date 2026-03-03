@@ -5,7 +5,7 @@ postgresUser="$dbPassword"
 pgAdminDefaultEmail="bhumit070@gmail.com"
 
 # remove all containers
-alias ddc='docker rm -f $(docker ps -a -q)'
+alias ddc='docker rm -f $(docker ps -a --format "{{.ID}} {{.Names}}" | grep -v "^.* dozzle$" | awk "{print \$1}")'
 
 # remove all images
 alias ddi='docker rmi -f $(docker images -a -q)'
