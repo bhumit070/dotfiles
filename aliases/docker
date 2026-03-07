@@ -53,3 +53,7 @@ alias dpostgresstop="dockerKillAndRemoveContainer $postgresContainerName"
 
 # Kubernetes
 alias k=kubectl
+
+alias dcu="docker compose --env-file .env up -d"
+alias dcd="docker compose --env-file .env down -d"
+alias dcb="docker compose --env-file .env build --no-cache"
