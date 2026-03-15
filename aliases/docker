@@ -11,7 +11,7 @@ alias ddc='docker rm -f $(docker ps -a --format "{{.ID}} {{.Names}}" | grep -v "
 alias ddi='docker rmi -f $(docker images -a -q)'
 
 # ps all
-alias dps='docker ps --all'
+alias dps='docker ps --format "table {{.ID}}\t{{.Status}}\t{{.Names}}\t{{.Ports}}" --all'
 
 # Functions
 dockerKillAndRemoveContainer() { docker container stop $1 && docker container rm $1 }
