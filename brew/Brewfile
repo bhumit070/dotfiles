@@ -94,6 +94,7 @@ brew "trash-cli", link: true
 brew "tree"
 brew "watchman"
 brew "wget"
+brew "wrk"
 brew "wxwidgets"
 brew "yarn"
 brew "yt-dlp"
