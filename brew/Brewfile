@@ -87,16 +87,14 @@ brew "fzf"
 brew "gh"
 # Distributed revision control system
 brew "git"
-# OpenType text shaping engine
-brew "harfbuzz"
-# Framework for layout and rendering of i18n text
-brew "pango"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
 # GNU grep, egrep and fgrep
 brew "grep"
 # Tool for glamorous shell scripts
 brew "gum"
+# OpenType text shaping engine
+brew "harfbuzz"
 # Improved top (interactive process viewer)
 brew "htop"
 # CLI for ImageOptim, ImageAlpha and JPEGmini
@@ -145,6 +143,8 @@ brew "openvpn"
 brew "oxker"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
+# Framework for layout and rendering of i18n text
+brew "pango"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
 # Fast, disk space efficient package manager
