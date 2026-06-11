@@ -191,6 +191,8 @@ brew "yt-dlp"
 brew "zig"
 # Scaling, colorspace conversion, and dithering library
 brew "zimg"
+# Plugin-based keyboard launcher
+cask "albertlauncher/albert/albert"
 # Menu bar tool to limit maximum charging percentage
 cask "aldente"
 # Enable Windows-like alt-tab
@@ -205,6 +207,8 @@ cask "antigravity"
 cask "anydesk"
 # Application uninstaller
 cask "appcleaner"
+# Control the platform power state of your Apple Silicon device
+cask "mhaeuser/mhaeuser/battery-toolkit"
 # Web browser focusing on privacy
 cask "brave-browser"
 # Open source IDE for exploring and testing APIs
@@ -227,6 +231,8 @@ cask "font-fira-code"
 cask "font-hack-nerd-font"
 # Kext-less implementation of FUSE
 cask "fuse-t"
+# SSHFS implementation based on FUSE-T
+cask "macos-fuse-t/cask/fuse-t-sshfs"
 # Desktop client for GitHub repositories
 cask "github"
 # Web browser
@@ -263,6 +269,8 @@ cask "slack"
 cask "steam"
 # Text editor for code, markup and prose
 cask "sublime-text"
+# A lightweight and full-featured cross-platform desktop client for self-hosted music servers
+cask "supersonic-app/supersonic/supersonic"
 # Native GUI tool for relational databases
 cask "tableplus"
 # Messaging app with a focus on speed and security
