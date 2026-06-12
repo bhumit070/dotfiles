@@ -165,8 +165,6 @@ brew "sleepwatcher", restart_service: :changed
 brew "smartmontools"
 # Cross-shell prompt for astronauts
 brew "starship"
-# Easiest, most secure way to use WireGuard and 2FA
-brew "tailscale"
 # General purpose fuzzy finder TUI
 brew "television"
 # OCR (Optical Character Recognition) engine
