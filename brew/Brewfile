@@ -1,4 +1,4 @@
-tap "albertlauncher/albert"
+tap "albertlauncher/albert", trusted: true
 tap "algorandfoundation/tap"
 tap "anomalyco/tap"
 tap "codecrafters-io/tap"
@@ -87,14 +87,16 @@ brew "fzf"
 brew "gh"
 # Distributed revision control system
 brew "git"
+# OpenType text shaping engine
+brew "harfbuzz"
+# Framework for layout and rendering of i18n text
+brew "pango"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
 # GNU grep, egrep and fgrep
 brew "grep"
 # Tool for glamorous shell scripts
 brew "gum"
-# OpenType text shaping engine
-brew "harfbuzz"
 # Improved top (interactive process viewer)
 brew "htop"
 # CLI for ImageOptim, ImageAlpha and JPEGmini
@@ -143,8 +145,6 @@ brew "openvpn"
 brew "oxker"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
-# Framework for layout and rendering of i18n text
-brew "pango"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
 # Fast, disk space efficient package manager
@@ -190,7 +190,7 @@ brew "zig"
 # Scaling, colorspace conversion, and dithering library
 brew "zimg"
 # Plugin-based keyboard launcher
-cask "albertlauncher/albert/albert"
+cask "albertlauncher/albert/albert", trusted: true
 # Menu bar tool to limit maximum charging percentage
 cask "aldente"
 # Enable Windows-like alt-tab
