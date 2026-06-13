@@ -156,11 +156,11 @@ Speedy shortcuts for package managers:
 
 This dotfiles setup includes a localized Docker database management container setup. You can fire up isolated databases mapped to persistent home volumes (`$HOME/docker/`) instantly using these custom aliases:
 
-| Database / Client | CLI Launcher | Exec Shell | Stop & Remove | Base Path | Port | Default User/Pass |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **MongoDB 6** | `dmongo` | `dmongos` | `dmongostop` | `~/docker/mongodb` | `27017` | *No Auth* |
-| **MySQL 8** | `dmysql` | `dmysqls` | `dmysqlstop` | `~/docker/mysql` | `3306` | `root` / *Empty* |
-| **PostgreSQL 14** | `dpostgres` | `dpostgress` | `dpostgresstop` | `~/docker/postgres` | `5432` | `bhumit070` / `bhumit070` |
+| Database / Client | CLI Launcher | Exec Shell   | Stop & Remove   | Base Path           | Port    | Default User/Pass         |
+| :---------------- | :----------- | :----------- | :-------------- | :------------------ | :------ | :------------------------ |
+| **MongoDB 6**     | `dmongo`     | `dmongos`    | `dmongostop`    | `~/docker/mongodb`  | `27017` | *No Auth*                 |
+| **MySQL 8**       | `dmysql`     | `dmysqls`    | `dmysqlstop`    | `~/docker/mysql`    | `3306`  | `root` / *Empty*          |
+| **PostgreSQL 14** | `dpostgres`  | `dpostgress` | `dpostgresstop` | `~/docker/postgres` | `5432`  | `bhumit070` / `bhumit070` |
 
 ---
 
@@ -247,4 +247,4 @@ This maps custom local domain names like **`ui.futr.local`** directly to local V
     *   Synchronized extensions listed and backed up within the main Homebrew Brewfile.
 
 ---
-*Maintained with ❤️ by [Bhoomit](mailto:ganatrabhoomit070@gmail.com)*
+*Maintained with ❤️ by [Bhoomit](https://github.com/bhumit070)*
