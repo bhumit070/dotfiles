@@ -1,7 +1,7 @@
 tap "albertlauncher/albert", trusted: true
 tap "algorandfoundation/tap"
 tap "anomalyco/tap"
-tap "asmvik/formulae"
+tap "asmvik/formulae", "https://github.com/asmvik/homebrew-formulae.git"
 tap "codecrafters-io/tap"
 tap "gromgit/fuse"
 tap "hashicorp/tap"
