@@ -55,6 +55,8 @@ brew "krb5"
 brew "php"
 # Dependency Manager for PHP
 brew "composer"
+# Create and run Linux containers using lightweight virtual machines
+brew "container"
 # .NET Core
 brew "dotnet"
 # Collection of reusable C++ library artifacts developed at Facebook
