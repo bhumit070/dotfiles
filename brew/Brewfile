@@ -245,6 +245,8 @@ cask "intellij-idea"
 cask "iterm2"
 # Keyboard customiser
 cask "karabiner-elements"
+# Free cross-platform office suite, fresh version
+cask "libreoffice"
 # Clipboard manager
 cask "maccy"
 # Controls and monitors all fans on Apple computers
