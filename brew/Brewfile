@@ -203,8 +203,6 @@ cask "android-commandlinetools"
 cask "android-platform-tools"
 # Agent orchestration platform
 cask "antigravity"
-# Allows connection to a computer remotely
-cask "anydesk"
 # Application uninstaller
 cask "appcleaner"
 # Control the platform power state of your Apple Silicon device
@@ -299,7 +297,6 @@ vscode "eamodio.gitlens"
 vscode "editorconfig.editorconfig"
 vscode "esbenp.prettier-vscode"
 vscode "foxundermoon.shell-format"
-vscode "github.copilot-chat"
 vscode "github.vscode-github-actions"
 vscode "golang.go"
 vscode "gruntfuggly.todo-tree"
