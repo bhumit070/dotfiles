@@ -229,7 +229,6 @@ cask "font-fira-code"
 cask "font-hack-nerd-font"
 # Kext-less implementation of FUSE
 cask "fuse-t"
-cask "fuse-t-sshfs"
 # Desktop client for GitHub repositories
 cask "github"
 # Web browser
