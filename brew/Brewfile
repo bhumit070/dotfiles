@@ -6,6 +6,7 @@ tap "codecrafters-io/tap"
 tap "gromgit/fuse"
 tap "hashicorp/tap"
 tap "jandedobbeleer/oh-my-posh"
+tap "jithin-sabu/tap"
 tap "localstack/tap"
 tap "macos-fuse-t/cask"
 tap "mhaeuser/mhaeuser"
@@ -255,6 +256,8 @@ cask "ngrok"
 cask "numi"
 # Collaboration platform for API development
 cask "postman"
+# Free up your Mac safely by clearing cache and junk to the Trash
+cask "jithin-sabu/tap/purge", trusted: true
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
 # Team communication and collaboration software
