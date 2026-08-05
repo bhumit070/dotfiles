@@ -275,6 +275,8 @@ cask "telegram"
 cask "visual-studio-code"
 # Multimedia player
 cask "vlc"
+# Menu bar toolkit with keep-awake, system monitor and volume mixer
+cask "vorssaint"
 # Multiplayer code editor
 cask "zed"
 # Video communication and virtual meeting platform
