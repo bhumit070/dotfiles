@@ -96,6 +96,8 @@ brew "harfbuzz"
 brew "pango"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# CLI for Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, and more
+brew "googleworkspace-cli"
 # GNU grep, egrep and fgrep
 brew "grep"
 # Tool for glamorous shell scripts
