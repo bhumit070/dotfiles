@@ -194,6 +194,20 @@ brew "yt-dlp"
 brew "zig"
 # Scaling, colorspace conversion, and dithering library
 brew "zimg"
+# The AI coding agent built for the terminal.
+brew "anomalyco/tap/opencode", trusted: true
+# CodeCrafters CLI
+brew "codecrafters-io/tap/codecrafters", trusted: true
+# File system client based on SSH File Transfer Protocol
+brew "gromgit/fuse/sshfs-mac", trusted: true
+# Terraform
+brew "hashicorp/tap/terraform", trusted: true
+# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
+brew "oven-sh/bun/bun", trusted: true
+# App source + Nix packages + Docker = Image
+brew "railwayapp/tap/nixpacks", trusted: true
+# Stripe CLI utility
+brew "stripe/stripe-cli/stripe", trusted: true
 # Plugin-based keyboard launcher
 cask "albertlauncher/albert/albert", trusted: true
 # Menu bar tool to limit maximum charging percentage
