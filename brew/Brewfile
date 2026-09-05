@@ -7,6 +7,7 @@ tap "gromgit/fuse"
 tap "hashicorp/tap"
 tap "jandedobbeleer/oh-my-posh"
 tap "jithin-sabu/tap"
+tap "kamillobinski/thock"
 tap "localstack/tap"
 tap "macos-fuse-t/cask"
 tap "mhaeuser/mhaeuser"
@@ -287,6 +288,8 @@ cask "supersonic"
 cask "tableplus"
 # Messaging app with a focus on speed and security
 cask "telegram"
+# Thock your mac keyboard
+cask "kamillobinski/thock/thock", trusted: true
 # Open-source code editor
 cask "visual-studio-code"
 # Multimedia player
