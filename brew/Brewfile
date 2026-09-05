@@ -209,8 +209,6 @@ brew "oven-sh/bun/bun", trusted: true
 brew "railwayapp/tap/nixpacks", trusted: true
 # Stripe CLI utility
 brew "stripe/stripe-cli/stripe", trusted: true
-# Plugin-based keyboard launcher
-cask "albertlauncher/albert/albert", trusted: true
 # Menu bar tool to limit maximum charging percentage
 cask "aldente"
 # Enable Windows-like alt-tab
