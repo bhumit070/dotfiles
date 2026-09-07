@@ -23,6 +23,10 @@ tap "zirixcz/vesktop"
 brew "act"
 # Codec library for encoding and decoding AV1 video streams
 brew "aom"
+# General-purpose data compression with high compression ratio
+brew "xz"
+# Zstandard is a real-time compression algorithm
+brew "zstd"
 # Download with resuming and segmented downloading
 brew "aria2"
 # Improved shell history for zsh, bash, fish and nushell
@@ -33,10 +37,6 @@ brew "bat"
 brew "bat-extras"
 # Get/set bluetooth power and discoverable state
 brew "blueutil"
-# General-purpose data compression with high compression ratio
-brew "xz"
-# Zstandard is a real-time compression algorithm
-brew "zstd"
 # Cross-platform make
 brew "cmake"
 # Console Matrix
@@ -87,6 +87,8 @@ brew "ffmpeg"
 brew "fnm"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# OpenType text shaping engine
+brew "harfbuzz"
 # GitHub command-line tool
 brew "gh"
 # Distributed revision control system
@@ -99,8 +101,6 @@ brew "googleworkspace-cli"
 brew "grep"
 # Tool for glamorous shell scripts
 brew "gum"
-# OpenType text shaping engine
-brew "harfbuzz"
 # Improved top (interactive process viewer)
 brew "htop"
 # CLI for ImageOptim, ImageAlpha and JPEGmini
@@ -133,8 +133,6 @@ brew "mole"
 brew "neovim"
 # Port scanning utility for large networks
 brew "nmap"
-# Optimized BLAS library
-brew "openblas"
 # HTTP load generator, inspired by rakyll/hey with tui animation
 brew "oha"
 # Command-line Git information tool
@@ -155,6 +153,10 @@ brew "pango"
 brew "pipx"
 # Fast, disk space efficient package manager
 brew "pnpm"
+# Adds support for geographic objects to PostgreSQL
+brew "postgis"
+# Object-relational database system
+brew "postgresql@17", restart_service: :changed, link: true
 # Tools for and transforming and inspecting PDF files
 brew "qpdf"
 # Persistent key-value database, with built-in net interface
