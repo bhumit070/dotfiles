@@ -1,3 +1,4 @@
-source $ZSH_PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh # zsh-autosuggestion
-source $ZSH_PLUGINS_DIR/zsh-vi-mode/zsh-vi-mode.plugin.zsh # zsh-vi-mode
-source $ZSH_PLUGINS_DIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh # fast-syntax-highlighting
+source $ZSH_PLUGINS_DIR/zsh-defer/zsh-defer.plugin.zsh #zsh-defer
+zsh-defer source $ZSH_PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh # zsh-autosuggestion
+zsh-defer source $ZSH_PLUGINS_DIR/zsh-vi-mode/zsh-vi-mode.plugin.zsh # zsh-vi-mode
+zsh-defer source $ZSH_PLUGINS_DIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh # fast-syntax-highlighting

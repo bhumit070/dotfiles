@@ -18,6 +18,9 @@ export HOMEBREW_REPOSITORY="/opt/homebrew"
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}"
 export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:"
 export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}"
+export HOMEBREW_NO_AUTO_UPDATE=true
+export LIBRARY_PATH="/opt/homebrew/lib"
+export CPATH="/opt/homebrew/include"
 
 export DENO_INSTALL="/Users/bhumit070/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
@@ -42,3 +45,13 @@ esac
 if [ -d "$HOME/.cargo/bin" ]; then
   export PATH="$HOME/.cargo/bin:$PATH"
 fi
+
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH="$JAVA_HOME/bin:$PATH"
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/cmdline-tools/latest/bin

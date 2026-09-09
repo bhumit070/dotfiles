@@ -1,3 +1,3 @@
-source $HOME/dotfiles/aliases/custom    #Custom
-source $HOME/dotfiles/aliases/docker    #Docker
-source $HOME/dotfiles/aliases/functions #CustomFunctions
+zsh-defer source $HOME/dotfiles/aliases/custom    #Custom
+zsh-defer source $HOME/dotfiles/aliases/docker    #Docker
+zsh-defer source $HOME/dotfiles/aliases/functions #CustomFunctions
