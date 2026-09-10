@@ -156,7 +156,7 @@ brew "pnpm"
 # Adds support for geographic objects to PostgreSQL
 brew "postgis"
 # Object-relational database system
-brew "postgresql@17", restart_service: :changed, link: true
+brew "postgresql@17", link: true
 # Tools for and transforming and inspecting PDF files
 brew "qpdf"
 # Persistent key-value database, with built-in net interface
