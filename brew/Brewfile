@@ -7,7 +7,7 @@ tap "gromgit/fuse"
 tap "hashicorp/tap"
 tap "jandedobbeleer/oh-my-posh"
 tap "jithin-sabu/tap"
-tap "kamillobinski/thock"
+tap "kamillobinski/thock", trusted: { casks: ["thock"] }
 tap "localstack/tap"
 tap "macos-fuse-t/cask"
 tap "mhaeuser/mhaeuser"
@@ -93,6 +93,10 @@ brew "harfbuzz"
 brew "gh"
 # Distributed revision control system
 brew "git"
+# Framework for layout and rendering of i18n text
+brew "pango"
+# Cross-platform application and UI framework
+brew "qtbase"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
 # CLI for Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, and more
@@ -147,8 +151,6 @@ brew "openvpn"
 brew "oxker"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
-# Framework for layout and rendering of i18n text
-brew "pango"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
 # Fast, disk space efficient package manager
@@ -290,8 +292,6 @@ cask "supersonic"
 cask "tableplus"
 # Messaging app with a focus on speed and security
 cask "telegram"
-# Thock your mac keyboard
-cask "kamillobinski/thock/thock", trusted: true
 # Open-source code editor
 cask "visual-studio-code"
 # Multimedia player
