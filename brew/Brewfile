@@ -229,6 +229,8 @@ cask "antigravity"
 cask "appcleaner"
 # Control the platform power state of your Apple Silicon device
 cask "mhaeuser/mhaeuser/battery-toolkit"
+# Cross platform SQL editor and database management app
+cask "beekeeper-studio"
 # Web browser focusing on privacy
 cask "brave-browser"
 # Open source IDE for exploring and testing APIs
@@ -290,6 +292,8 @@ cask "sublime-text"
 cask "supersonic"
 # Native GUI tool for relational databases
 cask "tableplus"
+# Native database client for many database types
+cask "tablepro"
 # Messaging app with a focus on speed and security
 cask "telegram"
 # Open-source code editor
