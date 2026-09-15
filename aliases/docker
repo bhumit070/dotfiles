@@ -12,6 +12,7 @@ alias ddi='docker rmi -f $(docker images -a -q)'
 
 # ps all
 alias dps='docker ps --format "table {{.ID}}\t{{.Status}}\t{{.Names}}\t{{.Ports}}" --all'
+alias dcps='docker compose ps --format "table {{.ID}}\t{{.Status}}\t{{.Names}}\t{{.Ports}}" --all'
 
 # Functions
 dockerKillAndRemoveContainer() { docker container stop $1 && docker container rm $1 }
