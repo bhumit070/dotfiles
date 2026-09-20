@@ -89,6 +89,8 @@ brew "fnm"
 brew "fzf"
 # OpenType text shaping engine
 brew "harfbuzz"
+# Disk usage analyzer with console interface written in Go
+brew "gdu"
 # GitHub command-line tool
 brew "gh"
 # Distributed revision control system
