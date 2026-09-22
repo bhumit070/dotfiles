@@ -59,6 +59,8 @@ brew "php"
 brew "composer"
 # Create and run Linux containers using lightweight virtual machines
 brew "container"
+# Message bus system, providing inter-application communication
+brew "dbus"
 # .NET Core
 brew "dotnet"
 # Collection of reusable C++ library artifacts developed at Facebook
@@ -267,6 +269,8 @@ cask "iina"
 cask "iterm2"
 # Keyboard customiser
 cask "karabiner-elements"
+# Communicate with your handheld devices
+cask "kde-connect"
 # Free cross-platform office suite, fresh version
 cask "libreoffice"
 # Clipboard manager
