@@ -245,6 +245,8 @@ cask "bruno"
 cask "caffeine"
 # Anthropic's official Claude AI desktop app
 cask "claude"
+# Terminal-based AI coding assistant
+cask "claude-code"
 # Write, edit, and chat about your code with AI
 cask "cursor"
 # Voice and text chat software
