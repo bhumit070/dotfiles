@@ -15,6 +15,7 @@ tap "mongodb/brew"
 tap "oven-sh/bun"
 tap "railwayapp/tap"
 tap "rbenv/tap"
+tap "shakacode/brew", trusted: { formulae: ["curl-impersonate"] }
 tap "steipete/tap"
 tap "stripe/stripe-cli"
 tap "supersonic-app/supersonic"
@@ -27,10 +28,16 @@ brew "aom"
 brew "xz"
 # Zstandard is a real-time compression algorithm
 brew "zstd"
+# Command-line interface for SQLite
+brew "sqlite"
 # Download with resuming and segmented downloading
 brew "aria2"
 # Improved shell history for zsh, bash, fish and nushell
 brew "atuin"
+# Automatic configure script builder
+brew "autoconf"
+# Tool for generating GNU Standards-compliant Makefiles
+brew "automake"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Bash scripts that integrate bat with various command-line tools
@@ -43,6 +50,8 @@ brew "cmake"
 brew "cmatrix"
 # Dependency manager for Cocoa projects
 brew "cocoapods"
+# Generic library support script
+brew "libtool"
 # Libraries to talk to Microsoft SQL Server and Sybase databases
 brew "freetds"
 # New file format for still image compression
@@ -51,8 +60,6 @@ brew "jpeg-xl"
 brew "libavif"
 # Graphics library to dynamically manipulate images
 brew "gd"
-# Network authentication protocol
-brew "krb5"
 # General-purpose scripting language
 brew "php"
 # Dependency Manager for PHP
@@ -70,7 +77,7 @@ brew "fizz"
 # Modular, composable client/server abstractions framework
 brew "wangle"
 # Facebook's branch of Apache Thrift, including a new C++ server
-brew "fbthrift"
+brew "fbthrift", link: false
 # Thrift functions for querying information from a service
 brew "fb303"
 # Shared library for Watchman and Eden projects
@@ -91,6 +98,10 @@ brew "fnm"
 brew "fzf"
 # OpenType text shaping engine
 brew "harfbuzz"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
+# Libraries for security-enabled client and server applications
+brew "nss"
 # Disk usage analyzer with console interface written in Go
 brew "gdu"
 # GitHub command-line tool
@@ -141,6 +152,8 @@ brew "mkcert"
 brew "mole"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Small build system for use with gyp or CMake
+brew "ninja"
 # Port scanning utility for large networks
 brew "nmap"
 # HTTP load generator, inspired by rakyll/hey with tui animation
@@ -391,6 +404,7 @@ go "honnef.co/go/tools/cmd/staticcheck"
 go "github.com/eliaonceagain/suptext"
 go "github.com/LuD1161/upi-recon-cli"
 go "github.com/wailsapp/wails/v2/cmd/wails"
+cargo "anime-dl"
 cargo "rust-bitcoin-cpu-miner"
 cargo "weathr"
 npm "chrome-webstore-upload-cli"
