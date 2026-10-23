@@ -1,4 +1,12 @@
-source $ZSH_PLUGINS_DIR/zsh-defer/zsh-defer.plugin.zsh #zsh-defer
-zsh-defer source $ZSH_PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh # zsh-autosuggestion
-zsh-defer source $ZSH_PLUGINS_DIR/zsh-vi-mode/zsh-vi-mode.plugin.zsh # zsh-vi-mode
-zsh-defer source $ZSH_PLUGINS_DIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh # fast-syntax-highlighting
+if [[ -r $ZSH_PLUGINS_DIR/zsh-defer/zsh-defer.plugin.zsh ]]; then
+  source $ZSH_PLUGINS_DIR/zsh-defer/zsh-defer.plugin.zsh #zsh-defer
+else
+  # zsh-defer not installed (run setup/zsh-setup.sh); fall back to loading things immediately
+  zsh-defer() { "$@"; }
+fi
+
+_zsh_plugin() { [[ -r $1 ]] && zsh-defer source "$1"; }
+_zsh_plugin $ZSH_PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh                       # zsh-autosuggestion
+_zsh_plugin $ZSH_PLUGINS_DIR/zsh-vi-mode/zsh-vi-mode.plugin.zsh                                 # zsh-vi-mode
+_zsh_plugin $ZSH_PLUGINS_DIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh      # fast-syntax-highlighting
+unfunction _zsh_plugin
