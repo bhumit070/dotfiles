@@ -1,14 +1,17 @@
+# Keep PATH entries unique (several tools prepend/append the same dirs)
+typeset -U path PATH
+
 export PATH=$PATH:/usr/local/go/bin                                  # GOLANG
 export PATH=$PATH:$HOME/.nvm/versions/node/v16.14.2/bin              # NODE JS
 export PATH="$PATH:$HOME/tools/elasticstack/elasticsearch-8.1.3/bin" # Elastic Search
 export PATH="$PATH:$HOME/tools/elasticstack/kibana-8.1.3/bin"        # Kiabana
 export PATH="$PATH:/Applications/mpv.app/Contents/MacOS"             # Mpv
 export PATH="$PATH:$HOME/dotfiles/custom_scripts"                    # custom_scripts
-export PATH="$PATH:/usr/local/bin:$PATH"                             # BIN
-export PATH="$PATH:$HOME/.local/bin:$PATH"                           # LOCAL BIN
+export PATH="$PATH:/usr/local/bin"                                   # BIN
+export PATH="$PATH:$HOME/.local/bin"                                 # LOCAL BIN
 
 # Bun
-export BUN_INSTALL="/Users/bhumit070/.bun"
+export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # homebrew paths
@@ -22,7 +25,7 @@ export HOMEBREW_NO_AUTO_UPDATE=true
 export LIBRARY_PATH="/opt/homebrew/lib"
 export CPATH="/opt/homebrew/include"
 
-export DENO_INSTALL="/Users/bhumit070/.deno"
+export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 export PATH=${PATH}:/usr/local/mysql/bin
 
@@ -30,28 +33,27 @@ export GOPATH="$HOME/go"
 export STARSHIP_CONFIG="$HOME/dotfiles/starship/starship.toml"
 export PATH="$GOPATH/bin:$PATH"
 
-fnmPath=$(which fnm)
-if [ ! -z "$fnmPath" ]; then
+if (( $+commands[fnm] )); then
   eval "$(fnm env --use-on-cd)"
 fi
-eval "$(starship init zsh)"
+if (( $+commands[starship] )); then
+  eval "$(starship init zsh)"
+fi
 
 export PNPM_HOME="$HOME/Library/pnpm"
-case ":$PATH:" in
-*":$PNPM_HOME:"*) ;;
-*) export PATH="$PATH:$PNPM_HOME" ;;
-esac
+export PATH="$PATH:$PNPM_HOME"
 
 if [ -d "$HOME/.cargo/bin" ]; then
   export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
+# /usr/libexec/java_home only exists on macOS and errors when no JDK is installed
+if [[ -x /usr/libexec/java_home ]] && JAVA_HOME=$(/usr/libexec/java_home 2>/dev/null); then
+  export JAVA_HOME
+  export PATH="$JAVA_HOME/bin:$PATH"
+fi
 
-export JAVA_HOME=$(/usr/libexec/java_home)
-export PATH="$JAVA_HOME/bin:$PATH"
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-
-export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/cmdline-tools/latest/bin
