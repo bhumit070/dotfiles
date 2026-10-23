@@ -28,7 +28,7 @@ mongoDbConfigVolumeInfo="${DOCKER_VOLUME_BASE_PATH}/mongodb/configdb:/data/confi
 mongoCommand="mongosh"
 mongoPorts="27017:27017"
 
-alias dmongo="docker container run -d --name $mongoContainerName -p $mongoPorts -v $mongoVolumeInfo -v $mongoDbConfigVolumeInfo $mongoImageName || mongos"
+alias dmongo="docker container run -d --name $mongoContainerName -p $mongoPorts -v $mongoVolumeInfo -v $mongoDbConfigVolumeInfo $mongoImageName || dmongos"
 alias dmongos="docker container exec -it $mongoContainerName $mongoCommand"
 alias dmongostop="dockerKillAndRemoveContainer $mongoContainerName"
 
