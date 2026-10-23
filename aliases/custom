@@ -2,15 +2,15 @@ alias zrc="source ~/.zshrc"
 
 # Some Common Aliases
 
-cat() {
-  bat "$1" || comamnd "$1"
-}
+if (( $+commands[bat] )); then
+  alias cat=bat
+fi
 
-_ls() {
-  eza -lah --icons=always "$@" || /bin/ls -lah "$@"
-}
-
-alias ls=_ls "$@"
+if (( $+commands[eza] )); then
+  alias ls="eza -lah --icons=always"
+else
+  alias ls="ls -lah"
+fi
 alias sl=ls
 alias cp="cp -v"
 alias mv="mv -v"
@@ -35,7 +35,7 @@ alias yd='yarn add -D'
 alias yg='yarn global add'
 alias yii='yarn init -y'
 
-alias pi'pnpm i'
+alias pi='pnpm i'
 alias pd='pnpm i -D'
 alias ppg='pnpm i -g'
 alias pii='pnpm init'
@@ -45,7 +45,6 @@ alias vite='yarn create vite'
 # Git Alises
 
 getBranchName() {
-  set -e
   local branch=$1
   if [ -z "$branch" ]; then
     branch=$(git branch --show-current)
@@ -71,7 +70,7 @@ alias python2=python3
 
 alias iphone="open -a Simulator.app --args -CurrentDeviceUDID 23936427-07EB-484E-A19D-CEDDED536D7D"
 
-alias rm="trash"
+(( $+commands[trash] )) && alias rm="trash"
 
 alias grm="go run main.go"
 alias grsm="go run src/main.go"
