@@ -181,7 +181,7 @@ brew "postgresql@17", link: true
 # Tools for and transforming and inspecting PDF files
 brew "qpdf"
 # Persistent key-value database, with built-in net interface
-brew "redis", restart_service: :changed
+brew "redis"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Safe, concurrent, practical language
