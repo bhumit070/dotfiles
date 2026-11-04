@@ -242,8 +242,6 @@ cask "alt-tab"
 cask "android-commandlinetools"
 # Android SDK component
 cask "android-platform-tools"
-# Agent orchestration platform
-cask "antigravity"
 # Application uninstaller
 cask "appcleaner"
 # Control the platform power state of your Apple Silicon device
@@ -254,18 +252,12 @@ cask "beekeeper-studio"
 cask "brave-browser"
 # Open source IDE for exploring and testing APIs
 cask "bruno"
-# Utility that prevents the system from going to sleep
-cask "caffeine"
 # Anthropic's official Claude AI desktop app
 cask "claude"
 # Terminal-based AI coding assistant
 cask "claude-code"
-# Write, edit, and chat about your code with AI
-cask "cursor"
 # Voice and text chat software
 cask "discord"
-# Web browser
-cask "firefox"
 # Screenshot software with built-in annotation tools
 cask "flameshot"
 # UI toolkit for building applications for mobile, web and desktop
@@ -290,8 +282,6 @@ cask "kde-connect"
 cask "libreoffice"
 # Clipboard manager
 cask "maccy"
-# Controls and monitors all fans on Apple computers
-cask "macs-fan-control"
 # Email client
 cask "microsoft-outlook"
 # Meet, chat, call, and collaborate in just one place
@@ -391,12 +381,14 @@ vscode "vscjava.vscode-maven"
 vscode "vscjava.vscode-spring-boot-dashboard"
 vscode "vscjava.vscode-spring-initializr"
 vscode "vscodevim.vim"
+vscode "vue.volar"
 vscode "wayou.vscode-todo-highlight"
 vscode "xabikos.javascriptsnippets"
 vscode "yzhang.markdown-all-in-one"
 go "github.com/air-verse/air"
 go "github.com/spf13/cobra-cli"
 go "golang.org/x/tools/gopls"
+go "github.com/magefile/mage"
 go "google.golang.org/protobuf/cmd/protoc-gen-go"
 go "google.golang.org/grpc/cmd/protoc-gen-go-grpc"
 go "github.com/cespare/reflex"
@@ -407,10 +399,3 @@ go "github.com/wailsapp/wails/v2/cmd/wails"
 cargo "anime-dl"
 cargo "rust-bitcoin-cpu-miner"
 cargo "weathr"
-npm "chrome-webstore-upload-cli"
-npm "eas-cli"
-npm "node-gyp"
-npm "nodemon"
-npm "pm2"
-npm "pnpm"
-npm "yarn"
