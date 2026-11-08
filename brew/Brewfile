@@ -31,8 +31,6 @@ brew "openssl@4"
 brew "xz"
 # Zstandard is a real-time compression algorithm
 brew "zstd"
-# Command-line interface for SQLite
-brew "sqlite"
 # Download with resuming and segmented downloading
 brew "aria2"
 # Improved shell history for zsh, bash, fish and nushell
@@ -57,6 +55,8 @@ brew "cocoapods"
 brew "libtool"
 # Libraries to talk to Microsoft SQL Server and Sybase databases
 brew "freetds"
+# TIFF library and utilities
+brew "libtiff"
 # New file format for still image compression
 brew "jpeg-xl"
 # Library for encoding and decoding .avif files
@@ -115,10 +115,6 @@ brew "gdu"
 brew "gh"
 # Distributed revision control system
 brew "git"
-# Framework for layout and rendering of i18n text
-brew "pango"
-# Cross-platform application and UI framework
-brew "qtbase"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
 # CLI for Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, and more
@@ -177,6 +173,8 @@ brew "openvpn"
 brew "oxker"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
+# Framework for layout and rendering of i18n text
+brew "pango"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
 # Fast, disk space efficient package manager
@@ -189,6 +187,8 @@ brew "postgresql@17", link: true
 brew "python@3.10"
 # Tools for and transforming and inspecting PDF files
 brew "qpdf"
+# Cross-platform application and UI framework
+brew "qtbase"
 # Persistent key-value database, with built-in net interface
 brew "redis"
 # Search tool like grep and The Silver Searcher
