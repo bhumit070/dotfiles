@@ -53,7 +53,8 @@ if [[ -x /usr/libexec/java_home ]] && JAVA_HOME=$(/usr/libexec/java_home 2>/dev/
   export PATH="$JAVA_HOME/bin:$PATH"
 fi
 
-export ANDROID_HOME=$HOME/Library/Android/sdk
+# Android SDK lives in the android-commandlinetools cask (sdkmanager installs into it)
+export ANDROID_HOME=/opt/homebrew/share/android-commandlinetools
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/cmdline-tools/latest/bin
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
